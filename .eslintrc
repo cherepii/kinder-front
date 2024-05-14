@@ -48,6 +48,7 @@
         // React, NextJS rules
         "jsx-a11y/no-static-element-interactions": "off",
         "react/jsx-indent-props": "off",
+        "import/no-extraneous-dependencies": "off",
         "jsx-a11y/click-events-have-key-events": "off",
         "react/prop-types": "off",
         "react/destructuring-assignment": "off",
@@ -126,7 +127,7 @@
             "allowTernary": true
           }
         ],
-        "tailwindcss/no-custom-classname": "warn",
+        "tailwindcss/no-custom-classname": "off",
         // Unicorn rules
         "unicorn/no-array-for-each": "off",
         "unicorn/no-null": "off",

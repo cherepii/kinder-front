@@ -5,6 +5,21 @@
 @import './constants.scss';
 @import './fonts.scss';
 
+@layer base {
+  .text-gradient {
+    background: linear-gradient(#9A4D21, #B0622F);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  .title-gradient {
+    background: linear-gradient(to right, #B0622F, #4A2914);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+}
+
 *,
 *::after,
 *::before {
@@ -13,17 +28,24 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: min(3vh,3vw);
+input::placeholder {
+  font-style: inherit;
+  font-size: 1.875rem;
+  font-weight: 500;
+  color: var(--primary-text-color);
+  font-family: 'Noto Sans';
+  text-align: center
 }
 
 body {
+  @apply text-xl text-primary-text;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: 'Bebas Neue', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     'Open-sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
 }
 
 code {
@@ -33,6 +55,17 @@ code {
 
 a {
   text-decoration: none;
-  color: var(--primary-text-color);
 }
 
+.swiper {
+  max-width: 62.5rem;
+  width: 100%;
+}
+
+.swiper-slide {
+  user-select: none;
+  transform: scale(.6) !important;
+}
+.swiper-slide-active {
+  transform: scale(1) !important;
+}

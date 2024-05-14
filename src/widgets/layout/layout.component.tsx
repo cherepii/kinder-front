@@ -10,6 +10,7 @@ export interface ILayoutProperties extends React.ComponentProps<'div'> {
 
 export const Layout = (props: ILayoutProperties) => {
   const { children, Meta, ...rest } = props
+
   return (
     <>
       {Meta}
