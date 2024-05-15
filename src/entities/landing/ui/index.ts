@@ -1,0 +1,5 @@
+export * from './login-modal.component'
+export * from './personal-cabinet-modal.component'
+export * from './prizes.component'
+export * from './prizes-text-block.component'
+export * from './rules.component'

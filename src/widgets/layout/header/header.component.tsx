@@ -37,7 +37,10 @@ export const Header = React.memo((props: IHeaderProperties) => {
   const { className } = props
 
   return (
-    <header {...props} className={clsx('relative bg-primary-accent px-7', className)}>
+    <header
+      {...props}
+      className={clsx('relative bg-primary-accent px-7 max-lg:px-3', className)}
+    >
       <ul className="flex items-center justify-end gap-8 font-noto-sans text-xs text-secondary-text max-lg:hidden">
         {HEADER_LINKS.map((link) => (
           <li
@@ -50,7 +53,7 @@ export const Header = React.memo((props: IHeaderProperties) => {
           </li>
         ))}
       </ul>
-      <div className="hidden items-center justify-end p-3 max-lg:flex">
+      <div className="hidden items-center justify-end py-3 max-lg:flex">
         <IconComponent name="burger" />
       </div>
       <Image

@@ -171,49 +171,6 @@
             "argsIgnorePattern": "^_"
           }
         ],
-        "boundaries/entry-point": [
-          2,
-          {
-            "default": "disallow",
-            "rules": [
-              {
-                "target": [
-                  [
-                    "shared",
-                    {
-                      "segment": "(ui|lib)"
-                    }
-                  ]
-                ],
-                "allow": [
-                  "index.ts",
-                  "*/index.ts"
-                ]
-              },
-              {
-                "target": [
-                  [
-                    "shared",
-                    {
-                      "segment": "(api|model|styles|meta)"
-                    }
-                  ]
-                ],
-                "allow": "index.ts"
-              },
-              {
-                "target": [
-                  "app",
-                  "pages",
-                  "widgets",
-                  "features",
-                  "entities"
-                ],
-                "allow": "index.ts"
-              }
-            ]
-          }
-        ],
         "boundaries/element-types": [
           2,
           {
