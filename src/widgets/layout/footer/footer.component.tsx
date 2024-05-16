@@ -4,11 +4,18 @@ import { IconComponent } from '@shared/ui'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useTranslation } from 'next-i18next'
 import * as React from 'react'
 
 export interface IFooterProperties extends React.ComponentProps<'footer'> {}
 export const Footer = React.memo((props: IFooterProperties) => {
   const { className } = props
+
+  const { pathname, query } = useRouter()
+
+  const { t } = useTranslation(undefined, { keyPrefix: 'FOOTER' })
+
   return (
     <footer {...props} className={clsx('font-noto-sans text-secondary-text', className)}>
       <Image src={wave} alt="wave" className="aspect-[1200/103] w-full object-cover" />
@@ -16,43 +23,49 @@ export const Footer = React.memo((props: IFooterProperties) => {
         <div>
           <IconComponent name="ferrero" />
           <p className="mt-[0.625rem] text-xs">
-            © Ferrero 2024 <span className="ml-1">All rights reserved</span>
+            {t('MARK.LEFT')}
+            <span className="ml-1">{t('MARK.RIGHT')}</span>
           </p>
         </div>
         <div className="flex items-start max-xl:mt-5 max-xl:block max-xl:w-full max-xl:max-w-[15.5rem]">
           <div className="w-full max-w-[33rem] text-xs font-bold">
             <ul className="flex gap-x-6 gap-y-5 max-xl:flex-col">
               <li>
-                <Link href="#">ПОТРЕБИТЕЛЬСКАЯ ЛИНИЯ</Link>
+                <Link href="#">{t('LINKS.LINE')}</Link>
               </li>
               <li>
-                <Link href="#">Юридические aспекты</Link>
+                <Link href="#">{t('LINKS.LEGAL')}</Link>
               </li>
               <li>
-                <Link href="#">Технические параметры</Link>
+                <Link href="#">{t('LINKS.PARAMS')}</Link>
               </li>
             </ul>
             <ul className="my-3 flex gap-x-6 gap-y-5 max-xl:flex-col">
               <li>
-                <Link href="#">Карта cайта</Link>
+                <Link href="#">{t('LINKS.MAP')}</Link>
               </li>
               <li>
-                <Link href="#">FERRERO FOODSERVICE</Link>
+                <Link href="#">{t('LINKS.FERRERO')}</Link>
               </li>
             </ul>
             <ul>
               <li>
-                <Link href="#">Политика в отношении обработки персональных данных</Link>
+                <Link href="#">{t('LINKS.POLicy')}</Link>
               </li>
             </ul>
           </div>
-          <div className="mx-5 flex items-center text-xs max-xl:hidden">
-            <a href="#" className="border-r border-r-secondary-text px-4">
+          <div className="mx-5 flex items-center text-xs max-xl:mx-0 max-xl:mt-3">
+            <Link
+              href={{ pathname, query }}
+              locale="kz"
+              scroll={false}
+              className="border-r border-r-secondary-text px-4 max-xl:pl-0"
+            >
               KK
-            </a>
-            <a href="#" className="px-4">
+            </Link>
+            <Link href={{ pathname, query }} locale="ru" scroll={false} className="px-4">
               RU
-            </a>
+            </Link>
           </div>
           <Image
             src={planet}

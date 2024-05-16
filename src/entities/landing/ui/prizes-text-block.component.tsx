@@ -1,5 +1,6 @@
 import { IconComponent } from '@shared/ui'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
+import { useTranslation } from 'next-i18next'
 import type { RefObject } from 'react'
 
 const springConfig = {
@@ -9,6 +10,8 @@ const springConfig = {
 }
 export const PrizesTextBlock = (props: { sectionRef: RefObject<HTMLDivElement> }) => {
   const { sectionRef } = props
+
+  const { t } = useTranslation()
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -25,23 +28,25 @@ export const PrizesTextBlock = (props: { sectionRef: RefObject<HTMLDivElement> }
       className="pb-[13.25rem] pt-[314px] text-secondary-text will-change-transform max-xl:pt-10 max-xl:text-center max-lg:pb-0"
     >
       <h1 className="text-[3.75rem] font-bold leading-[3.75rem] text-primary-text max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
-        Призы
+        {t('PRIZES.TITLE')}
       </h1>
-      <h3 className="mt-[1.875rem] font-bold max-lg:mt-6 max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
-        Iphone 15 Pro
+      <h3 className="mt-[1.875rem] text-[3rem] font-bold leading-[3rem] max-lg:mt-6 max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
+        {t('PRIZES.FIRST_BLOCK.TITLE')}
         <span className="block text-[1.875rem] font-normal leading-[1.75rem] max-lg:text-[1.25rem] max-lg:leading-[1.5rem]">
-          с чехлом Harry Potter
+          {t('PRIZES.FIRST_BLOCK.SUB_TITLE')}
         </span>
       </h3>
       <h3 className="my-[1.875rem] text-[3rem] font-bold leading-[3rem] max-lg:my-4 max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
-        Наушники Air Max
+        {t('PRIZES.SECOND_BLOCK.TITLE')}
       </h3>
       <h3 className="mt-[1.875rem] text-[3rem] font-bold leading-[3rem] max-lg:mt-0 max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
-        Сертификат 100 000 ₸
+        {t('PRIZES.THIRD_BLOCK.TITLE')}
+
         <span className="block text-[1.875rem] font-normal leading-[1.75rem] max-lg:text-[1.25rem] max-lg:leading-[1.5rem]">
-          в магазин Meloman
+          {t('PRIZES.THIRD_BLOCK.SUB_TITLE.TOP')}
+
           <br />
-          на коллекцию Harry Potter
+          {t('PRIZES.THIRD_BLOCK.SUB_TITLE.BOTTOM')}
         </span>
       </h3>
       <IconComponent

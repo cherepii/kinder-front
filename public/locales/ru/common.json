@@ -1,0 +1,99 @@
+{
+  "HEADER": {
+    "MISSION": "Наша миссия",
+    "PRODUCTS": "Продукты",
+    "INICIATIVES": "Инициативы",
+    "APPLAYDU": "APPLAYDU",
+    "PROMOTIONS": "Акции",
+    "OUR": "Наша забота"
+  },
+  "MAIN": {
+    "TITLE": {
+      "FIRST": "Откройте мир волшебства",
+      "SECOND": "Соберите новую коллекцию Harry Potter Kinder Joy и выигрываейте призы!"
+    }
+  },
+  "PRIZES": {
+    "TITLE": "Призы",
+    "FIRST_BLOCK": {
+      "TITLE": "Iphone 15 Pro",
+      "SUB_TITLE": "с чехлом Harry Potter"
+    },
+    "SECOND_BLOCK": {
+      "TITLE": "Наушники Air Max"
+    },
+    "THIRD_BLOCK": {
+      "TITLE": "Сертификат 100 000 ₸",
+      "SUB_TITLE": {
+        "TOP": "в магазин Meloman",
+        "BOTTOM": "на коллекцию Harry Potter"
+      }
+    }
+  },
+  "RULES": {
+    "TITLE": "Правила участия",
+    "FIRST_BLOCK": {
+      "TOP": "Приобретайте",
+      "BOTTOM": "Kinder Joy Harry Potter"
+    },
+    "SECOND_BLOCK": "Сделайте фото игрушки или фигурки из коллекции",
+    "THIRD_BLOCK": {
+      "TITLE": "Загрузите фото",
+      "SUB_TITLE": {
+        "TOP": "Чем больше фотографий –",
+        "BOTTOM": "тем больше шансов на выигрыш!"
+      }
+    }
+  },
+  "UPLOAD_FORM": {
+    "TITLE": "Загрузить фото",
+    "NAME": "Имя и фамилия",
+    "PHONE": "Номер телефона",
+    "ATTACH": "Прикрепите фото",
+    "UPLOAD": "Загрузить",
+    "PERSONAL_CABINET": "Личный кабинет"
+  },
+  "ABOUT": {
+    "TITLE": {
+      "TOP": "О коллекции",
+      "BOTTOM": "Kinder Joy Harry Potter"
+    },
+    "SUB_TITLE": {
+      "TOP": "Откройте яйцо и найдите",
+      "BOTTOM": "своего проводника в мир магии!"
+    },
+    "TEXT_BLOCK": {
+      "FIRST": "Им может стать директор Хогвартса Альбус Дамблдор, знаток магических фолиантов Гермиона Грейнджер или даже сам Гарри Поттер.",
+      "SECOND": {
+        "TOP": "Kinder Joy “Harry Potter” - новая коллекция фигурок и гаджетов с персонажами знаменитой волшебной франшизы. В ней вы найдете уникальные фигурки funko-персонажей, стикеры, закладки, браслеты и насадки для ручек.",
+        "BOTTOM": "Каждая из них - ваш шанс на выигрыш!"
+      }
+    },
+    "BUTTONS": {
+      "TELEGRAM": "Telegram-бот",
+      "CONDITIONS": "Условия участия"
+    }
+  },
+  "FOOTER": {
+    "MARK": {
+      "LEFT": "© Ferrero 2024",
+      "RIGHT": "All rights reserved"
+    },
+    "LINKS": {
+      "LINE": "ПОТРЕБИТЕЛЬСКАЯ ЛИНИЯ",
+      "LEGAL": "Юридические aспекты",
+      "PARAMS": "Технические параметры",
+      "MAP": "Карта cайта",
+      "FERRERO": "FERRERO FOODSERVICE",
+      "POLicy": "Политика в отношении обработки персональных данных"
+    }
+  },
+  "LOGIN_MODAL": {
+    "TITLE": "Номер телефона",
+    "NEXT": "Далее"
+  },
+  "PERSONAL_CABINET_MODAL": {
+    "TITLE": "Галерея",
+    "SUB_TITLE": "Ваши фотографии"
+  }
+}

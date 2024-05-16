@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next'
 import { type ComponentProps, useId } from 'react'
 
 import { IconComponent } from '../icon.component'
@@ -7,6 +8,8 @@ interface IAttachmentInputProperties extends ComponentProps<'input'> {
 }
 export const AttachmentInput = ({ label, ...rest }: IAttachmentInputProperties) => {
   const id = useId()
+
+  const { t } = useTranslation()
 
   return (
     <label
@@ -29,7 +32,7 @@ export const AttachmentInput = ({ label, ...rest }: IAttachmentInputProperties) 
       />
       <div className="flex items-center">
         <p className="mr-2 font-noto-sans text-[1.875rem] font-medium max-lg:mr-0 max-lg:text-[1.25rem] ">
-          {label ?? 'Прикрепите фото'}
+          {label ?? t('UPLOAD_FORM.ATTACH')}
         </p>
         <IconComponent name="attachment" className="max-lg:scale-[0.7]" />
       </div>

@@ -2,6 +2,7 @@ import type { IUser } from '@shared/types'
 import { IconComponent } from '@shared/ui'
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
+import { useTranslation } from 'next-i18next'
 
 interface IProperties {
   userData: IUser | null
@@ -10,6 +11,8 @@ interface IProperties {
 }
 export const PersonalCabinetModal = (props: IProperties) => {
   const { opened, userData, setOpened } = props
+
+  const { t } = useTranslation(undefined, { keyPrefix: 'PERSONAL_CABINET_MODAL' })
 
   return (
     <AnimatePresence>
@@ -30,10 +33,10 @@ export const PersonalCabinetModal = (props: IProperties) => {
             </button>
             <div className="mx-auto mt-8 flex w-full flex-col items-center max-lg:mt-8">
               <h2 className="text-center text-[3.75rem] font-bold leading-[3.75rem] max-lg:text-[2.75rem] max-lg:leading-[2.75rem]">
-                Галерея
+                {t('TITLE')}
               </h2>
               <p className="text-center text-[1.875rem] leading-[2.25rem] max-lg:text-lg">
-                Ваши фотографии
+                {t('SUB_TITLE')}
               </p>
               <div className="mt-6 grid w-full grid-cols-[repeat(3,minmax(100px,160px))] gap-x-5 gap-y-[3.375rem] overflow-y-auto max-lg:mt-[0.875rem] max-lg:gap-y-8 max-lg:gap-x-3">
                 {userData?.files.map((file) => (

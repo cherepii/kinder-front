@@ -2,39 +2,42 @@ import logo from '@public/assets/images/logo.png'
 import { IconComponent } from '@shared/ui'
 import clsx from 'clsx'
 import Image from 'next/image'
+import { useTranslation } from 'next-i18next'
 import * as React from 'react'
 
 export interface IHeaderProperties extends React.ComponentProps<'header'> {}
 
-const HEADER_LINKS = [
-  {
-    label: 'Наша миссия ',
-    link: '#',
-  },
-  {
-    label: 'Продукты',
-    link: '#2',
-  },
-  {
-    label: 'Инициативы',
-    link: '#3',
-  },
-  {
-    label: 'APPLAYDU',
-    link: '#6',
-  },
-  {
-    label: 'Акции',
-    link: '#4',
-  },
-  {
-    label: 'Наша забота',
-    link: '#5',
-  },
-]
-
 export const Header = React.memo((props: IHeaderProperties) => {
   const { className } = props
+
+  const { t } = useTranslation(undefined, { keyPrefix: 'HEADER' })
+
+  const HEADER_LINKS = [
+    {
+      label: t('MISSION'),
+      link: '#',
+    },
+    {
+      label: t('PRODUCTS'),
+      link: '#2',
+    },
+    {
+      label: t('INICIATIVES'),
+      link: '#3',
+    },
+    {
+      label: t('APPLAYDU'),
+      link: '#6',
+    },
+    {
+      label: t('PROMOTIONS'),
+      link: '#4',
+    },
+    {
+      label: t('OUR'),
+      link: '#5',
+    },
+  ]
 
   return (
     <header

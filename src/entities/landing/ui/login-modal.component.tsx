@@ -2,6 +2,7 @@ import { instance } from '@shared/api'
 import type { IUser } from '@shared/types'
 import { Button, IconComponent, Input } from '@shared/ui'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useTranslation } from 'next-i18next'
 import { useCallback, useState } from 'react'
 import { toast } from 'react-toastify'
 
@@ -13,6 +14,8 @@ interface IProperties {
 }
 export const LoginModal = (props: IProperties) => {
   const { opened, setOpened, setUserData, setPdModal } = props
+
+  const { t } = useTranslation(undefined, { keyPrefix: 'LOGIN_MODAL' })
 
   const [phone, setPhone] = useState('')
   const [loading, setLoading] = useState(false)
@@ -51,7 +54,7 @@ export const LoginModal = (props: IProperties) => {
             </button>
             <div className="mx-auto mt-[5.9375rem] flex w-full max-w-[27rem]  flex-col items-center max-lg:mt-[4.375rem]">
               <h2 className="text-center text-[3.75rem] font-bold leading-[3.75rem] max-lg:text-[2.75rem] max-lg:leading-[2.75rem]">
-                Номер телефона
+                {t('TITLE')}
               </h2>
               <Input
                 placeholder="+7 XXX XXX XX XX"
@@ -60,7 +63,7 @@ export const LoginModal = (props: IProperties) => {
                 containerClassName="my-[1.875rem] max-lg:my-[1.375rem]"
               />
               <Button variant="secondary" onClick={handleSubmit} disabled={loading}>
-                Далее
+                {t('NEXT')}
               </Button>
             </div>
           </div>

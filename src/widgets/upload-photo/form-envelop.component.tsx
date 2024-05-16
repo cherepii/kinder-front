@@ -5,6 +5,7 @@ import { instance } from '@shared/api'
 import { AttachmentInput, Button, Input } from '@shared/ui'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { useTranslation } from 'next-i18next'
 import type { MouseEvent } from 'react'
 import { useCallback, useState } from 'react'
 import { toast } from 'react-toastify'
@@ -14,6 +15,8 @@ export const FormEnvelop = () => {
   const toggleOpened = useCallback(() => setOpened((previous) => !previous), [])
 
   const [loading, setLoading] = useState(false)
+
+  const { t } = useTranslation()
 
   const [name, setName] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
@@ -102,16 +105,16 @@ export const FormEnvelop = () => {
           className="absolute bottom-9 z-[2] mx-5 h-[47.9375rem] w-full max-w-[30.375rem] cursor-default rounded-[2.75rem] bg-[#FAE09B] py-[4.125rem] px-[1.625rem] max-lg:bottom-[4.75rem] max-lg:h-[30.125rem] max-lg:w-[92%] max-lg:px-[1.125rem] max-lg:py-11"
         >
           <h4 className="title-gradient text-center text-[3.75rem] font-bold leading-[3.75rem] max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
-            Загрузить фото
+            {t('UPLOAD_FORM.TITLE')}
           </h4>
           <div className="mt-[2.375rem] w-full max-lg:mt-[1.75rem]">
             <Input
-              placeholder="Имя и фамилия"
+              placeholder={t('UPLOAD_FORM.NAME')}
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
             <Input
-              placeholder="Номер телефона"
+              placeholder={t('UPLOAD_FORM.PHONE')}
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
               containerClassName="my-3"
@@ -126,7 +129,7 @@ export const FormEnvelop = () => {
           variant="secondary"
           containerClassName="!absolute z-[5] left-[50%] bottom-6 translate-x-[-50%]"
         >
-          Загрузить
+          {t('UPLOAD_FORM.UPLOAD')}
         </Button>
       </motion.div>
     </motion.div>

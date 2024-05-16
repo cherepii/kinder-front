@@ -28,7 +28,10 @@ import type { IUser } from '@shared/types'
 import { Button, IconComponent } from '@shared/ui'
 import { Layout } from '@widgets/layout'
 import { FormEnvelop } from '@widgets/upload-photo'
+import type { GetStaticProps } from 'next'
 import Image from 'next/image'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useCallback, useRef, useState } from 'react'
 import { ToastContainer } from 'react-toastify'
 import { Navigation } from 'swiper/modules'
@@ -64,6 +67,8 @@ const SLIDER_SLIDES = [
 export function Home() {
   const isMob = useIsMob()
 
+  const { t } = useTranslation()
+
   const [loginModal, setLoginModal] = useState(false)
   const [pdModal, setPdModal] = useState(false)
 
@@ -90,10 +95,10 @@ export function Home() {
                 className="aspect-[172/42] w-[10.75rem]"
               />
               <h1 className="text-gradient mt-12 text-[3.75rem] font-bold uppercase leading-[4rem]">
-                Откройте мир волшебства
+                {t('MAIN.TITLE.FIRST')}
               </h1>
               <h5 className="mt-2 text-4xl font-bold leading-9 text-[#934A20]">
-                Соберите новую коллекцию Harry Potter Kinder Joy и выигрываейте призы!
+                {t('MAIN.TITLE.SECOND')}
               </h5>
             </div>
             <div>
@@ -142,10 +147,10 @@ export function Home() {
             />
             <div className="mb-16 w-full max-w-[11.5rem] text-center">
               <h1 className="text-gradient text-[2.5rem] font-bold uppercase leading-[2.5rem]">
-                Откройте мир волшебства
+                {t('MAIN.TITLE.FIRST')}
               </h1>
               <h5 className="mt-1 text-lg font-bold leading-[1.125rem] text-[#934A20]">
-                Соберите новую коллекцию Harry Potter Kinder Joy и выигрываейте призы!
+                {t('MAIN.TITLE.SECOND')}
               </h5>
             </div>
             <div className="flex items-start gap-9">
@@ -171,7 +176,7 @@ export function Home() {
           className="mx-auto mt-[3.75rem] w-full max-w-[59.0625rem] max-lg:mt-20"
         >
           <h1 className="text-center text-[3.75rem] font-bold leading-[3.75rem] text-primary-text max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
-            Правила участия
+            {t('RULES.TITLE')}
           </h1>
           <Rules />
         </section>
@@ -182,32 +187,29 @@ export function Home() {
           <FormEnvelop />
           <div className="mt-8 flex justify-center">
             <Button onClick={handlePersonalCabinet} variant="primary">
-              Личный кабинет
+              {t('UPLOAD_FORM.PERSONAL_CABINET')}
             </Button>
           </div>
         </section>
         <section id="about" className="pt-[3.75rem] max-lg:pt-8">
           <h1 className="text-center text-[3.75rem] font-bold leading-[3.75rem] text-primary-text max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
-            О коллекции
-            <br /> Kinder Joy Harry Potter
+            {t('ABOUT.TITLE.TOP')}
+            <br />
+            {t('ABOUT.TITLE.BOTTOM')}
           </h1>
           <h5 className="mt-2 hidden text-center text-[1.25rem] leading-[1.25rem] text-[#5C341B] max-lg:block">
-            Откройте яйцо и найдите
-            <br /> своего проводника в мир магии!
+            {t('ABOUT.SUB_TITLE.TOP')}
+            <br />
+            {t('ABOUT.SUB_TITLE.BOTTOM')}
           </h5>
           <div className="mx-auto mt-[2.0625rem] flex w-full max-w-[51.25rem] items-center justify-between max-lg:flex-col">
             <Image src={kinder} alt="kinder" className="aspect-[352/384] max-w-[22rem]" />
             <article className="w-full max-w-[25.625rem] text-left text-[30px] max-lg:mt-5 max-lg:text-center max-lg:text-xl">
-              <p>
-                Им может стать директор Хогвартса Альбус Дамблдор, знаток магических
-                фолиантов Гермиона Грейнджер или даже сам Гарри Поттер.
-              </p>
+              <p>{t('ABOUT.TEXT_BLOCK.FIRST')}</p>
               <p className="mt-4 max-lg:mt-6">
-                Kinder Joy “Harry Potter” - новая коллекция фигурок и гаджетов с
-                персонажами знаменитой волшебной франшизы. В ней вы найдете уникальные
-                фигурки funko-персонажей, стикеры, закладки, браслеты и насадки для ручек.
+                {t('ABOUT.TEXT_BLOCK.SECOND.TOP')}
                 <br />
-                Каждая из них - ваш шанс на выигрыш!
+                {t('ABOUT.TEXT_BLOCK.SECOND.BOTTOM')}
               </p>
             </article>
           </div>
@@ -252,8 +254,8 @@ export function Home() {
             />
           </div>
           <div className="flex w-full items-center justify-center gap-5 pt-[1.875rem] max-lg:flex-col">
-            <Button variant="secondary">Telegram-бот</Button>
-            <Button variant="secondary">Условия участия </Button>
+            <Button variant="secondary"> {t('ABOUT.BUTTONS.TELEGRAM')}</Button>
+            <Button variant="secondary"> {t('ABOUT.BUTTONS.CONDITIONS')}</Button>
           </div>
         </section>
         <section id="downloads" className="py-[3.75rem]">
@@ -299,3 +301,12 @@ export function Home() {
 }
 
 export default Home
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'ru', ['common'])),
+      // Will be passed to the page component as props
+    },
+  }
+}
