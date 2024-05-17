@@ -19,6 +19,26 @@
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
+
+  .users-table {
+    font-family: 'Noto Sans';
+    & th {
+      font-size: 20px;
+      font-weight: bold;
+      padding: 5px;
+      background: #efefef;
+      border: 1px solid #dddddd;
+    }
+    & td {
+      font-size: 18px;
+      border: 1px solid #dddddd;
+      padding: 5px;
+    }
+
+    & tbody tr:nth-child(even){
+      background: #f3f3f3;
+    }
+  }
 }
 
 *,
@@ -50,6 +70,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  background-color: #fff;
 }
 
 code {

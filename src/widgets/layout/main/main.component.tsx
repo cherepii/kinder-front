@@ -5,7 +5,7 @@ export interface IMainProperties extends React.ComponentProps<'main'> {}
 export const Main = (props: IMainProperties) => {
   const { className, children } = props
   return (
-    <main {...props} className={clsx('text-clip', className)}>
+    <main {...props} className={clsx('overflow-clip', className)}>
       {children}
     </main>
   )
