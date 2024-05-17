@@ -6,7 +6,15 @@ import 'react-toastify/dist/ReactToastify.css'
 
 import type { AppProps } from 'next/app'
 import { appWithTranslation } from 'next-i18next'
+import { ToastContainer } from 'react-toastify'
 
-const MyApp = ({ Component, pageProps }: AppProps) => <Component {...pageProps} />
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  return (
+    <>
+      <ToastContainer />
+      <Component {...pageProps} />
+    </>
+  )
+}
 
 export default appWithTranslation(MyApp)

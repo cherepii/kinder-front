@@ -33,7 +33,6 @@ import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useCallback, useRef, useState } from 'react'
-import { ToastContainer } from 'react-toastify'
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -92,7 +91,6 @@ export function Home() {
     >
       <Layout.Header />
       <Layout.Main className="flex flex-1 flex-col">
-        <ToastContainer />
         <section id="main">
           <div className="relative mx-auto mt-7 flex w-max items-start px-5 max-2xl:w-full max-xl:hidden">
             <div className="mt-[3.125rem] w-full max-w-[22.5rem]">

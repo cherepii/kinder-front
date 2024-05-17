@@ -2,6 +2,7 @@ import logo from '@public/assets/images/logo.png'
 import { IconComponent } from '@shared/ui'
 import clsx from 'clsx'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import * as React from 'react'
 
@@ -59,11 +60,9 @@ export const Header = React.memo((props: IHeaderProperties) => {
       <div className="hidden items-center justify-end py-3 max-lg:flex">
         <IconComponent name="burger" />
       </div>
-      <Image
-        alt="Logo"
-        src={logo}
-        className="absolute left-[0.9375rem] top-0 aspect-[200/110] w-[12.5rem]"
-      />
+      <Link href="/" className="absolute left-[0.9375rem] top-0 ">
+        <Image alt="Logo" src={logo} className="aspect-[200/110] w-[12.5rem]" />
+      </Link>
     </header>
   )
 })

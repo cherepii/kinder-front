@@ -10,6 +10,8 @@ import type { MouseEvent } from 'react'
 import { useCallback, useState } from 'react'
 import { toast } from 'react-toastify'
 
+const FOUR_MB_IN_BYTES = 4 * 1024 * 1024
+
 export const FormEnvelop = () => {
   const [opened, setOpened] = useState(false)
   const toggleOpened = useCallback(() => setOpened((previous) => !previous), [])
@@ -26,12 +28,24 @@ export const FormEnvelop = () => {
     if (!photos || !opened) return
     e.stopPropagation()
 
+    const formattedPhone = phoneNumber?.replace(/\D/g, '')
+
+    if (!formattedPhone) {
+      toast.warn('Введите корректный номер телефона!')
+      return
+    }
+
     const formData = new FormData()
 
-    formData.append('phoneNumber', phoneNumber?.replace(/\D/g, ''))
+    formData.append('phoneNumber', formattedPhone)
     formData.append('username', name)
 
     for (const photo of Array.from(photos)) {
+      if (photo.size > FOUR_MB_IN_BYTES) {
+        toast.warn(`Файл ${photo.name} больше 4МБ. Файл не будет загружен`)
+        continue
+      }
+
       formData.append('files', photo)
     }
 
