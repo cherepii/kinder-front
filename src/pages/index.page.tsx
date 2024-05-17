@@ -82,7 +82,14 @@ export function Home() {
   }, [userData])
 
   return (
-    <Layout Meta={<Meta description="Unistory next" title="Unistory" />}>
+    <Layout
+      Meta={
+        <Meta
+          description="Приобретайте новые яйца kinder harry potter joy и выигрывайте призы!"
+          title="Kinder Қазақстан | Акция Harry Potter"
+        />
+      }
+    >
       <Layout.Header />
       <Layout.Main className="flex flex-1 flex-col">
         <ToastContainer />
@@ -171,14 +178,13 @@ export function Home() {
             <Prizes />
           </div>
         </section>
-        <section
-          id="rules"
-          className="mx-auto mt-[3.75rem] w-full max-w-[59.0625rem] max-lg:mt-20"
-        >
-          <h1 className="text-center text-[3.75rem] font-bold leading-[3.75rem] text-primary-text max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
-            {t('RULES.TITLE')}
-          </h1>
-          <Rules />
+        <section id="rules">
+          <div className="mx-auto mt-[3.75rem] w-full max-w-[59.0625rem] max-lg:mt-20">
+            <h1 className="top-6 text-center text-[3.75rem] font-bold leading-[3.75rem] text-primary-text max-lg:sticky max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
+              {t('RULES.TITLE')}
+            </h1>
+            <Rules />
+          </div>
         </section>
         <section
           id="upload-photo"
@@ -191,7 +197,7 @@ export function Home() {
             </Button>
           </div>
         </section>
-        <section id="about" className="pt-[3.75rem] max-lg:pt-8">
+        <section id="about" className="overflow-clip pt-[3.75rem] max-lg:pt-8">
           <h1 className="text-center text-[3.75rem] font-bold leading-[3.75rem] text-primary-text max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
             {t('ABOUT.TITLE.TOP')}
             <br />
@@ -255,7 +261,11 @@ export function Home() {
           </div>
           <div className="flex w-full items-center justify-center gap-5 pt-[1.875rem] max-lg:flex-col">
             <Button variant="secondary"> {t('ABOUT.BUTTONS.TELEGRAM')}</Button>
-            <Button variant="secondary"> {t('ABOUT.BUTTONS.CONDITIONS')}</Button>
+            <Button variant="secondary">
+              <a href="/ПРАВИЛА АКЦИИ HARRY POTTER KINDER JOY.docx" target="_blank">
+                {t('ABOUT.BUTTONS.CONDITIONS')}
+              </a>
+            </Button>
           </div>
         </section>
         <section id="downloads" className="py-[3.75rem]">

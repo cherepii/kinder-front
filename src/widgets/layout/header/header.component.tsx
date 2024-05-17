@@ -15,27 +15,27 @@ export const Header = React.memo((props: IHeaderProperties) => {
   const HEADER_LINKS = [
     {
       label: t('MISSION'),
-      link: '#',
+      link: 'https://www.kinder.com/kz/ru/alittlealot?_gl=1*1m329zs*_up*MQ..&gclid=Cj0KCQjwgJyyBhCGARIsAK8LVLN5MfgcWyYwJuG7NY6SBt7KISvtFGLAyN1cgu7npaENQp1GduX3ZkMaArG8EALw_wcB',
     },
     {
       label: t('PRODUCTS'),
-      link: '#2',
+      link: 'https://www.kinder.com/kz/ru/products?_gl=1*1m329zs*_up*MQ..&gclid=Cj0KCQjwgJyyBhCGARIsAK8LVLN5MfgcWyYwJuG7NY6SBt7KISvtFGLAyN1cgu7npaENQp1GduX3ZkMaArG8EALw_wcB',
     },
     {
       label: t('INICIATIVES'),
-      link: '#3',
+      link: 'https://www.kinder.com/kz/ru/initiatives?_gl=1*1m329zs*_up*MQ..&gclid=Cj0KCQjwgJyyBhCGARIsAK8LVLN5MfgcWyYwJuG7NY6SBt7KISvtFGLAyN1cgu7npaENQp1GduX3ZkMaArG8EALw_wcB',
     },
     {
       label: t('APPLAYDU'),
-      link: '#6',
+      link: 'https://www.kinder.com/kz/ru/xp/natoons-toys/?_gl=1*1m329zs*_up*MQ..&gclid=Cj0KCQjwgJyyBhCGARIsAK8LVLN5MfgcWyYwJuG7NY6SBt7KISvtFGLAyN1cgu7npaENQp1GduX3ZkMaArG8EALw_wcB',
     },
     {
       label: t('PROMOTIONS'),
-      link: '#4',
+      link: 'https://www.kinder.com/kz/ru/',
     },
     {
       label: t('OUR'),
-      link: '#5',
+      link: 'https://www.kinder.com/kz/ru/vkusnoe-kachestvo',
     },
   ]
 

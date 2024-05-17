@@ -31,26 +31,34 @@ export const Footer = React.memo((props: IFooterProperties) => {
           <div className="w-full max-w-[33rem] text-xs font-bold">
             <ul className="flex gap-x-6 gap-y-5 max-xl:flex-col">
               <li>
-                <Link href="#">{t('LINKS.LINE')}</Link>
+                <Link href="https://www.ferrero.com/contact-us/">{t('LINKS.LINE')}</Link>
               </li>
               <li>
-                <Link href="#">{t('LINKS.LEGAL')}</Link>
+                <Link href="https://www.kinder.com/kz/ru/legal-aspects">
+                  {t('LINKS.LEGAL')}
+                </Link>
               </li>
               <li>
-                <Link href="#">{t('LINKS.PARAMS')}</Link>
+                <Link href="https://www.kinder.com/kz/ru/technical-requirements">
+                  {t('LINKS.PARAMS')}
+                </Link>
               </li>
             </ul>
             <ul className="my-3 flex gap-x-6 gap-y-5 max-xl:flex-col">
               <li>
-                <Link href="#">{t('LINKS.MAP')}</Link>
+                <Link href="https://www.kinder.com/kz/ru/sitemap">{t('LINKS.MAP')}</Link>
               </li>
               <li>
-                <Link href="#">{t('LINKS.FERRERO')}</Link>
+                <Link href="https://www.ferrerofoodservice.com/ru/ru/">
+                  {t('LINKS.FERRERO')}
+                </Link>
               </li>
             </ul>
             <ul>
               <li>
-                <Link href="#">{t('LINKS.POLicy')}</Link>
+                <Link href="https://www.kinder.com/kz/ru/politika-v-otnosenii-obrabotki-personal-nyh-dannyh">
+                  {t('LINKS.POLicy')}
+                </Link>
               </li>
             </ul>
           </div>

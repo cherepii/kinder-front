@@ -1,8 +1,12 @@
+import { instance } from '@shared/api'
 import type { IUser } from '@shared/types'
 import { IconComponent } from '@shared/ui'
+import clsx from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
+import { useCallback, useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
 
 interface IProperties {
   userData: IUser | null
@@ -10,9 +14,35 @@ interface IProperties {
   setOpened: (value: boolean) => void
 }
 export const PersonalCabinetModal = (props: IProperties) => {
-  const { opened, userData, setOpened } = props
+  const { opened, userData: defaultUserData, setOpened } = props
+
+  const [userData, setUserData] = useState(defaultUserData)
+  const [loading, setLoading] = useState(false)
 
   const { t } = useTranslation(undefined, { keyPrefix: 'PERSONAL_CABINET_MODAL' })
+
+  const getUserData = useCallback(async () => {
+    const formattedPhone = defaultUserData?.phoneNumber?.replace(/\D/g, '')
+
+    try {
+      setLoading(true)
+      const res = await instance.get<{ user: IUser }>(
+        `/users?phoneNumber=${formattedPhone}`
+      )
+      if (!res.data.user) throw new Error('error')
+      setUserData(res.data.user)
+    } catch {
+      toast.error('Пользователь с таким номером телефона не найден!')
+    } finally {
+      setLoading(false)
+    }
+  }, [defaultUserData])
+
+  useEffect(() => {
+    if (opened) {
+      getUserData()
+    }
+  }, [opened, getUserData])
 
   return (
     <AnimatePresence>
@@ -26,7 +56,10 @@ export const PersonalCabinetModal = (props: IProperties) => {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="aspect-square max-h-[37.5rem] w-full max-w-[37.5rem] cursor-default overflow-y-auto rounded-[1.25rem] bg-[#F3DA97] p-9 shadow-2xl max-lg:h-[28.125rem] max-lg:px-5 max-lg:py-7"
+            className={clsx(
+              'aspect-square max-h-[37.5rem] w-full max-w-[37.5rem] cursor-default overflow-y-auto rounded-[1.25rem] bg-[#F3DA97] p-9 shadow-2xl max-lg:h-[28.125rem] max-lg:px-5 max-lg:py-7',
+              loading && 'animate-pulse'
+            )}
           >
             <button className="ml-auto block" onClick={() => setOpened(false)}>
               <IconComponent name="close" />

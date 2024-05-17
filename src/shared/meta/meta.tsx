@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import Script from 'next/script'
 import { NextSeo } from 'next-seo'
 
 import { APP_META } from './meta.config'
@@ -22,27 +23,18 @@ const Meta = (props: IMetaProperties) => {
           content="width=device-width,initial-scale=1"
           key="viewport"
         />
-        <link
-          rel="apple-touch-icon"
-          href={`${router.basePath}/apple-touch-icon.png`}
-          key="apple"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href={`${router.basePath}/favicon-32x32.png`}
-          key="icon32"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href={`${router.basePath}/favicon-16x16.png`}
-          key="icon16"
-        />
         <link rel="icon" href={`${router.basePath}/favicon.ico`} key="favicon" />
       </Head>
+      <Script
+        async
+        strategy="afterInteractive"
+        src="https://static.addtoany.com/menu/page.js"
+      />
+      <Script
+        async
+        strategy="afterInteractive"
+        src="https://www.kinder.com/kz/sites/kinder_kz/files/google_tag/google_tag.script.js"
+      />
       <NextSeo
         title={props.title}
         description={props.description}

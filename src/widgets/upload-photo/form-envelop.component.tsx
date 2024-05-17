@@ -102,7 +102,7 @@ export const FormEnvelop = () => {
           onClick={(e) => e.stopPropagation()}
           animate={{ translateY: opened ? 0 : '100%' }}
           initial={{ translateY: '100%' }}
-          className="absolute bottom-9 z-[2] mx-5 h-[47.9375rem] w-full max-w-[30.375rem] cursor-default rounded-[2.75rem] bg-[#FAE09B] py-[4.125rem] px-[1.625rem] max-lg:bottom-[4.75rem] max-lg:h-[30.125rem] max-lg:w-[92%] max-lg:px-[1.125rem] max-lg:py-11"
+          className="absolute bottom-14 z-[2] mx-5 h-[47.9375rem] w-full max-w-[30.375rem] cursor-default rounded-[2.75rem] bg-[#FAE09B] py-[4.125rem] px-[1.625rem] max-lg:bottom-[4.75rem] max-lg:h-[30.125rem] max-lg:w-[92%] max-lg:px-[1.125rem] max-lg:py-11"
         >
           <h4 className="title-gradient text-center text-[3.75rem] font-bold leading-[3.75rem] max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
             {t('UPLOAD_FORM.TITLE')}
