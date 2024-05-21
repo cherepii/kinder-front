@@ -64,12 +64,17 @@ export const Prizes = () => {
           className="h-full w-full rotate-[27deg]"
         />
       </motion.div>
-      <Image
-        draggable={false}
-        src={ellipseBg}
-        alt="ellipse bg"
-        className="absolute right-[-18.5rem] top-[0] h-[640px] max-w-[1200px]"
-      />
+      <motion.div
+        style={{ translateY: headphonesTransform }}
+        className="absolute right-[-18.5rem] top-[0] h-[40rem] max-w-[1200px]"
+      >
+        <Image
+          draggable={false}
+          src={ellipseBg}
+          alt="ellipse bg"
+          className="h-full w-full"
+        />
+      </motion.div>
     </div>
   )
 }

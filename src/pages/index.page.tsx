@@ -201,7 +201,7 @@ export function Home() {
             <br />
             {t('ABOUT.TITLE.BOTTOM')}
           </h1>
-          <h5 className="mt-2 hidden text-center text-[1.25rem] leading-[1.25rem] text-[#5C341B] max-lg:block">
+          <h5 className="mt-2 text-center text-[2.25rem] font-bold leading-[2.25rem] text-[#5C341B] max-lg:text-[1.25rem] max-lg:leading-[1.25rem]">
             {t('ABOUT.SUB_TITLE.TOP')}
             <br />
             {t('ABOUT.SUB_TITLE.BOTTOM')}
