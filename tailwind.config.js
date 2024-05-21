@@ -28,6 +28,7 @@ module.exports = {
       },
       dropShadow: {
         card: '-4px 6px 6px rgba(0, 0, 0, .50)',
+        'card-sm': '-4px 6px 10px rgba(0, 0, 0, 0.4)',
         fold: '0 4px 6px rgba(0, 0, 0, .3)',
       },
       screens: {

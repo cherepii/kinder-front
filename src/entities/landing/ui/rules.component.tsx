@@ -11,7 +11,7 @@ export const Rules = () => {
   return (
     <div className="mt-[3.75rem] flex w-full flex-wrap items-start justify-center gap-y-[100px] max-lg:mt-6">
       <div className="top-20 flex h-[31.5625rem] w-full max-w-[19.6875rem] items-center justify-center max-lg:sticky">
-        <div className="mt-10 flex h-full w-full rotate-[-1deg] flex-col rounded-[1.75rem] bg-[#F1B72B] py-5 px-[1.125rem] text-center max-lg:mt-0">
+        <div className="mt-10 flex h-full w-full rotate-[-1deg] flex-col rounded-[1.75rem] bg-[#F1B72B] py-5 px-[1.125rem] text-center drop-shadow-card-sm max-lg:mt-0">
           <Image src={dividerSmall} alt="small divider" className="w-full" />
           <p className="mt-12 mb-11 text-[1.875rem] font-bold leading-[1.875rem]">
             {t('FIRST_BLOCK.TOP')}
@@ -22,7 +22,7 @@ export const Rules = () => {
         </div>
       </div>
       <div className="top-20 flex h-[31.5625rem] w-full max-w-[19.6875rem] items-center justify-center max-lg:sticky ">
-        <div className="ml-[-2rem] flex h-full w-full rotate-[6deg] flex-col rounded-[1.75rem] bg-[#F3410E] py-5 px-[1.125rem] text-center drop-shadow-card max-lg:ml-0">
+        <div className="ml-[-2rem] flex h-full w-full rotate-[6deg] flex-col rounded-[1.75rem] bg-[#F3410E] py-5 px-[1.125rem] text-center drop-shadow-card-sm max-lg:ml-0">
           <Image src={dividerSmall} alt="small divider" className="w-full" />
           <p className="mt-12 mb-11 text-[1.875rem] font-bold leading-[1.875rem] text-secondary-text">
             {t('SECOND_BLOCK')}

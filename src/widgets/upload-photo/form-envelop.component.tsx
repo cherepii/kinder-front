@@ -1,6 +1,8 @@
-import ellipse from '@public/assets/images/ellipse-form-bg.png'
 import foreground from '@public/assets/images/envelop/foreground.png'
 import fold from '@public/assets/images/envelop/top-fold.png'
+import glitter from '@public/assets/images/glitter.png'
+import snitch from '@public/assets/images/snitch.png'
+import snitch2 from '@public/assets/images/snitch-2.png'
 import { instance } from '@shared/api'
 import { AttachmentInput, Button, Input } from '@shared/ui'
 import clsx from 'clsx'
@@ -68,92 +70,105 @@ export const FormEnvelop = () => {
   }
 
   return (
-    <motion.div
-      initial={{ paddingTop: 120 }}
-      animate={{ paddingTop: opened ? 480 : 120 }}
-      transition={{
-        delay: 0.3,
-        type: 'timing',
-        duration: 0.5,
-      }}
-      className="relative mx-auto w-full max-w-[58.5rem] overflow-hidden"
-    >
-      <Image
-        src={ellipse}
-        alt="ellipse"
-        className="absolute inset-x-0 bottom-[-5rem] z-[1]"
-      />
+    <div className="relative mx-auto w-full max-w-[58.5rem]">
       <motion.div
-        whileTap={{ scale: 0.95 }}
-        onClick={toggleOpened}
-        className="relative z-[2] flex cursor-pointer flex-col items-center justify-center"
+        initial={{ paddingTop: 120 }}
+        animate={{ paddingTop: opened ? 480 : 120 }}
+        transition={{
+          delay: 0.3,
+          type: 'timing',
+          duration: 0.5,
+        }}
+        className="relative overflow-hidden"
       >
-        <div
-          className={clsx(
-            'absolute left-[50%] bottom-0 z-[0] aspect-[556/370] w-full max-w-[556px] translate-x-[-50%] rounded-t-[0.85rem] rounded-b-[1.75rem] bg-[#E6E8EA] max-lg:top-3'
-          )}
-        />
         <motion.div
-          transition={{
-            type: 'spring',
-            damping: 13,
-            stiffness: 100,
-            delay: opened ? 0 : 0.3,
-          }}
-          animate={{ rotateX: opened ? 180 : 0, translateX: '-50%' }}
-          initial={{ translateX: '-50%' }}
-          className={clsx(
-            'absolute left-[50%]  z-[1] aspect-[549/236] w-full max-w-[34.6125rem] origin-top translate-x-[-50%]',
-            opened ? 'top-[14px]' : 'top-[10px] max-lg:top-[8px]'
-          )}
+          whileTap={{ scale: 0.95 }}
+          onClick={toggleOpened}
+          className="relative z-[2] flex cursor-pointer flex-col items-center justify-center"
         >
-          <Image src={fold} alt="fold" className="h-full w-full drop-shadow-fold" />
+          <div
+            className={clsx(
+              'absolute left-[50%] bottom-0 z-[1] aspect-[556/370] w-full max-w-[556px] translate-x-[-50%] rounded-t-[0.85rem] rounded-b-[1.75rem] bg-[#E6E8EA] max-lg:top-3'
+            )}
+          />
+          <motion.div
+            transition={{
+              type: 'spring',
+              damping: 13,
+              stiffness: 100,
+              delay: opened ? 0 : 0.3,
+            }}
+            animate={{ rotateX: opened ? 180 : 0, translateX: '-50%' }}
+            initial={{ translateX: '-50%' }}
+            className={clsx(
+              'absolute left-[50%]  z-[1] aspect-[549/236] w-full max-w-[34.6125rem] origin-top translate-x-[-50%]',
+              opened ? 'top-[14px]' : 'top-[10px] max-lg:top-[8px]'
+            )}
+          >
+            <Image src={fold} alt="fold" className="h-full w-full drop-shadow-fold" />
+          </motion.div>
+          <Image
+            src={foreground}
+            alt="foreground"
+            className="relative z-[3] aspect-[556/381] w-full max-w-[35.15rem] rounded-[1.75rem] max-lg:rounded-[1.25rem]"
+          />
+          <motion.div
+            transition={{
+              type: 'spring',
+              damping: 15,
+              stiffness: 90,
+              delay: opened ? 0.5 : 0,
+            }}
+            onClick={(e) => e.stopPropagation()}
+            animate={{ translateY: opened ? 0 : '100%' }}
+            initial={{ translateY: '100%' }}
+            className="absolute bottom-14 z-[2] mx-5 h-[47.9375rem] w-full max-w-[30.375rem] cursor-default rounded-[2.75rem] bg-[#FAE09B] py-[4.125rem] px-[1.625rem] max-lg:bottom-[4.75rem] max-lg:h-[30.125rem] max-lg:w-[90%] max-lg:rounded-[0.9375rem] max-lg:px-[1.125rem] max-lg:py-11"
+          >
+            <h4 className="title-gradient text-center text-[3.75rem] font-bold leading-[3.75rem] max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
+              {t('UPLOAD_FORM.TITLE')}
+            </h4>
+            <div className="mt-[2.375rem] w-full max-lg:mt-[1.75rem]">
+              <Input
+                placeholder={t('UPLOAD_FORM.NAME')}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+              <Input
+                placeholder={t('UPLOAD_FORM.PHONE')}
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                containerClassName="my-3"
+              />
+              <AttachmentInput onChange={(e) => setPhotos(e.target.files)} />
+            </div>
+          </motion.div>
+          <Button
+            onClick={handleClick}
+            disabled={loading}
+            type="submit"
+            variant="secondary"
+            containerClassName="!absolute z-[5] left-[50%] bottom-6 translate-x-[-50%]"
+          >
+            {t('UPLOAD_FORM.UPLOAD')}
+          </Button>
         </motion.div>
-        <Image
-          src={foreground}
-          alt="foreground"
-          className="relative z-[3] aspect-[556/381] w-full max-w-[35.15rem] rounded-[1.75rem] max-lg:rounded-[1.25rem]"
-        />
-        <motion.div
-          transition={{
-            type: 'spring',
-            damping: 15,
-            stiffness: 90,
-            delay: opened ? 0.5 : 0,
-          }}
-          onClick={(e) => e.stopPropagation()}
-          animate={{ translateY: opened ? 0 : '100%' }}
-          initial={{ translateY: '100%' }}
-          className="absolute bottom-14 z-[2] mx-5 h-[47.9375rem] w-full max-w-[30.375rem] cursor-default rounded-[2.75rem] bg-[#FAE09B] py-[4.125rem] px-[1.625rem] max-lg:bottom-[4.75rem] max-lg:h-[30.125rem] max-lg:w-[90%] max-lg:rounded-[0.9375rem] max-lg:px-[1.125rem] max-lg:py-11"
-        >
-          <h4 className="title-gradient text-center text-[3.75rem] font-bold leading-[3.75rem] max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
-            {t('UPLOAD_FORM.TITLE')}
-          </h4>
-          <div className="mt-[2.375rem] w-full max-lg:mt-[1.75rem]">
-            <Input
-              placeholder={t('UPLOAD_FORM.NAME')}
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <Input
-              placeholder={t('UPLOAD_FORM.PHONE')}
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              containerClassName="my-3"
-            />
-            <AttachmentInput onChange={(e) => setPhotos(e.target.files)} />
-          </div>
-        </motion.div>
-        <Button
-          onClick={handleClick}
-          disabled={loading}
-          type="submit"
-          variant="secondary"
-          containerClassName="!absolute z-[5] left-[50%] bottom-6 translate-x-[-50%]"
-        >
-          {t('UPLOAD_FORM.UPLOAD')}
-        </Button>
       </motion.div>
-    </motion.div>
+      <div className="ellipse-gradient absolute inset-x-0 bottom-[-5rem] z-[1] aspect-[936/490] w-full max-w-[64.5rem] max-lg:hidden"></div>
+      <Image
+        src={snitch}
+        alt="snitch"
+        className="absolute -bottom-7 left-8 z-[2] aspect-[125/162] w-[7.8125rem] rotate-[-17.3deg] max-lg:hidden"
+      />
+      <Image
+        src={glitter}
+        alt="glitter"
+        className="absolute bottom-[-17.5rem] left-[16rem] z-[1] aspect-[495/953] w-[30.9375rem] rotate-[92deg] max-lg:hidden"
+      />
+      <Image
+        src={snitch2}
+        alt="snitch"
+        className="absolute bottom-[6.875rem] right-[3.125rem] z-[3] aspect-[236/253] w-[14.75rem] max-lg:hidden"
+      />
+    </div>
   )
 }

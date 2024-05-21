@@ -19,6 +19,9 @@
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
+  .ellipse-gradient {
+    background: radial-gradient(#F8DB95 45%, #fff 72%)
+  }
 
   .users-table {
     font-family: 'Noto Sans';

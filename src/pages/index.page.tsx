@@ -186,7 +186,7 @@ export function Home() {
         </section>
         <section
           id="upload-photo"
-          className="overflow-hidden px-4 pb-[3.75rem] max-lg:pb-4"
+          className="relative overflow-hidden px-4 pb-[3.75rem] max-lg:pb-4"
         >
           <FormEnvelop />
           <div className="mt-8 flex justify-center">
