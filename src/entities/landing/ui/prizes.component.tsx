@@ -66,7 +66,7 @@ export const Prizes = () => {
       </motion.div>
       <motion.div
         style={{ translateY: headphonesTransform }}
-        className="absolute right-[-18.5rem] top-[0] h-[40rem] max-w-[1200px]"
+        className="absolute right-[-18.5rem] top-[0] h-[40rem] max-w-[1200px] will-change-transform"
       >
         <Image
           draggable={false}

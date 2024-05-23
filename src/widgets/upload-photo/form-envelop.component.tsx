@@ -6,7 +6,8 @@ import snitch2 from '@public/assets/images/snitch-2.png'
 import { instance } from '@shared/api'
 import { AttachmentInput, Button, Input } from '@shared/ui'
 import clsx from 'clsx'
-import { motion } from 'framer-motion'
+import type { ValueAnimationTransition } from 'framer-motion'
+import { motion, useAnimate } from 'framer-motion'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import type { MouseEvent } from 'react'
@@ -14,6 +15,13 @@ import { useCallback, useState } from 'react'
 import { toast } from 'react-toastify'
 
 const FOUR_MB_IN_BYTES = 4 * 1024 * 1024
+
+const springConfig: ValueAnimationTransition<any> = {
+  type: 'spring',
+  stiffness: 200,
+  mass: 10,
+  damping: 30,
+}
 
 export const FormEnvelop = () => {
   const [opened, setOpened] = useState(false)
@@ -26,6 +34,9 @@ export const FormEnvelop = () => {
     () => setAnimationCompleted((previous) => !previous),
     []
   )
+
+  const [firstScope, startFirstSnitch] = useAnimate()
+  const [secondScope, startSecondSnitch] = useAnimate()
 
   const { t } = useTranslation()
 
@@ -80,6 +91,45 @@ export const FormEnvelop = () => {
       setLoading(false)
     }
   }
+
+  const animateFirstSnitch = useCallback(async () => {
+    const randomValueX = Math.floor(Math.random() * 50)
+    const randomValueY = Math.floor(Math.random() * 50)
+
+    await startFirstSnitch(
+      firstScope.current,
+      {
+        x: randomValueX,
+        y: -randomValueY,
+      },
+      springConfig
+    )
+  }, [firstScope, startFirstSnitch])
+
+  const animateSecondSnitch = useCallback(async () => {
+    const randomValueX = Math.floor(Math.random() * 50)
+    const randomValueY = Math.floor(Math.random() * 50)
+
+    await startSecondSnitch(
+      secondScope.current,
+      {
+        x: randomValueX,
+        y: -randomValueY,
+      },
+      springConfig
+    )
+  }, [secondScope, startSecondSnitch])
+
+  // useEffect(() => {
+  //   const interval = setInterval(async () => {
+  //     animateFirstSnitch()
+  //     animateSecondSnitch()
+  //   }, 500)
+
+  //   return () => {
+  //     clearInterval(interval)
+  //   }
+  // }, [animateFirstSnitch, animateSecondSnitch])
 
   return (
     <div className="relative mx-auto w-full max-w-[58.5rem]">
@@ -167,21 +217,25 @@ export const FormEnvelop = () => {
         </motion.div>
       </motion.div>
       <div className="ellipse-gradient absolute inset-x-0 bottom-[-5rem] z-[1] aspect-[936/490] w-full max-w-[64.5rem] max-lg:hidden"></div>
-      <Image
-        src={snitch}
-        alt="snitch"
-        className="absolute -bottom-7 left-8 z-[2] aspect-[125/162] w-[7.8125rem] rotate-[-17.3deg] max-lg:hidden"
-      />
+      <motion.div
+        style={{ x: 0, y: 0 }}
+        ref={firstScope}
+        className="absolute -bottom-7 left-8 z-[2] aspect-[125/162] w-[7.8125rem] will-change-transform max-lg:hidden"
+      >
+        <Image src={snitch} alt="snitch" className="h-full w-full rotate-[-17.3deg]" />
+      </motion.div>
       <Image
         src={glitter}
         alt="glitter"
         className="absolute bottom-[-17.5rem] left-[16rem] z-[1] aspect-[495/953] w-[30.9375rem] rotate-[92deg] max-lg:hidden"
       />
-      <Image
-        src={snitch2}
-        alt="snitch"
-        className="absolute bottom-[6.875rem] right-[3.125rem] z-[3] aspect-[236/253] w-[14.75rem] max-lg:hidden"
-      />
+      <motion.div
+        style={{ x: 0, y: 0 }}
+        ref={secondScope}
+        className="absolute bottom-[6.875rem] right-[3.125rem]  z-[3] aspect-[236/253] w-[14.75rem] will-change-transform  max-lg:hidden"
+      >
+        <Image src={snitch2} alt="snitch" className="f-full h-full" />
+      </motion.div>
     </div>
   )
 }
