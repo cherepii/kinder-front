@@ -19,6 +19,25 @@ import model3 from '@public/assets/images/model-3.png'
 import model4 from '@public/assets/images/model-4.png'
 import model5 from '@public/assets/images/model-5.png'
 import model6 from '@public/assets/images/model-6.png'
+import model7 from '@public/assets/images/model-7.png'
+import model8 from '@public/assets/images/model-8.png'
+import model9 from '@public/assets/images/model-9.png'
+import model10 from '@public/assets/images/model-10.png'
+import model11 from '@public/assets/images/model-11.png'
+import model12 from '@public/assets/images/model-12.png'
+import model13 from '@public/assets/images/model-13.png'
+import model14 from '@public/assets/images/model-14.png'
+import model15 from '@public/assets/images/model-15.png'
+import model16 from '@public/assets/images/model-16.png'
+import model17 from '@public/assets/images/model-17.png'
+import model18 from '@public/assets/images/model-18.png'
+import model19 from '@public/assets/images/model-19.png'
+import model20 from '@public/assets/images/model-20.png'
+import model21 from '@public/assets/images/model-21.png'
+import model22 from '@public/assets/images/model-22.png'
+import model23 from '@public/assets/images/model-23.png'
+import model24 from '@public/assets/images/model-24.png'
+import model25 from '@public/assets/images/model-25.png'
 import newColelction from '@public/assets/images/new-collection.png'
 import poster from '@public/assets/images/poster.png'
 import posteMob from '@public/assets/images/poster-mob.png'
@@ -60,6 +79,82 @@ const SLIDER_SLIDES = [
   {
     image: model6,
     key: 6,
+  },
+  {
+    image: model7,
+    key: 7,
+  },
+  {
+    image: model8,
+    key: 8,
+  },
+  {
+    image: model9,
+    key: 9,
+  },
+  {
+    image: model10,
+    key: 10,
+  },
+  {
+    image: model11,
+    key: 11,
+  },
+  {
+    image: model12,
+    key: 12,
+  },
+  {
+    image: model13,
+    key: 13,
+  },
+  {
+    image: model14,
+    key: 14,
+  },
+  {
+    image: model15,
+    key: 15,
+  },
+  {
+    image: model16,
+    key: 16,
+  },
+  {
+    image: model17,
+    key: 17,
+  },
+  {
+    image: model18,
+    key: 18,
+  },
+  {
+    image: model19,
+    key: 19,
+  },
+  {
+    image: model20,
+    key: 20,
+  },
+  {
+    image: model21,
+    key: 21,
+  },
+  {
+    image: model22,
+    key: 22,
+  },
+  {
+    image: model23,
+    key: 23,
+  },
+  {
+    image: model24,
+    key: 24,
+  },
+  {
+    image: model25,
+    key: 25,
   },
 ]
 

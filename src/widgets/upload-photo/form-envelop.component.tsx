@@ -21,11 +21,23 @@ export const FormEnvelop = () => {
 
   const [loading, setLoading] = useState(false)
 
+  const [animationCompleted, setAnimationCompleted] = useState(false)
+  const toggleAnimationCompleted = useCallback(
+    () => setAnimationCompleted((previous) => !previous),
+    []
+  )
+
   const { t } = useTranslation()
 
   const [name, setName] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
   const [photos, setPhotos] = useState<FileList | null>(null)
+
+  const handleAnimation = useCallback(() => {
+    setTimeout(() => {
+      toggleAnimationCompleted()
+    }, 300)
+  }, [toggleAnimationCompleted])
 
   const handleClick = async (e: MouseEvent<HTMLButtonElement>) => {
     if (!photos || !opened) return
@@ -93,16 +105,17 @@ export const FormEnvelop = () => {
           />
           <motion.div
             transition={{
-              type: 'spring',
-              damping: 13,
-              stiffness: 100,
+              type: 'timing',
               delay: opened ? 0 : 0.3,
             }}
             animate={{ rotateX: opened ? 180 : 0, translateX: '-50%' }}
             initial={{ translateX: '-50%' }}
+            onAnimationStart={handleAnimation}
+            onAnimationEnd={handleAnimation}
             className={clsx(
-              'absolute left-[50%]  z-[1] aspect-[549/236] w-full max-w-[34.6125rem] origin-top translate-x-[-50%]',
-              opened ? 'top-[14px]' : 'top-[10px] max-lg:top-[8px]'
+              'absolute left-[50%] z-[1] aspect-[549/236] w-full max-w-[34.6125rem] origin-top translate-x-[-50%]',
+              opened ? 'top-[14px]' : 'top-[10px] max-lg:top-[8px]',
+              { '!z-[4]': !opened && animationCompleted }
             )}
           >
             <Image src={fold} alt="fold" className="h-full w-full drop-shadow-fold" />
