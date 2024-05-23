@@ -11,7 +11,7 @@ import { motion, useAnimate } from 'framer-motion'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import type { MouseEvent } from 'react'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 
 const FOUR_MB_IN_BYTES = 4 * 1024 * 1024
@@ -120,16 +120,16 @@ export const FormEnvelop = () => {
     )
   }, [secondScope, startSecondSnitch])
 
-  // useEffect(() => {
-  //   const interval = setInterval(async () => {
-  //     animateFirstSnitch()
-  //     animateSecondSnitch()
-  //   }, 500)
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      animateFirstSnitch()
+      animateSecondSnitch()
+    }, 500)
 
-  //   return () => {
-  //     clearInterval(interval)
-  //   }
-  // }, [animateFirstSnitch, animateSecondSnitch])
+    return () => {
+      clearInterval(interval)
+    }
+  }, [animateFirstSnitch, animateSecondSnitch])
 
   return (
     <div className="relative mx-auto w-full max-w-[58.5rem]">
