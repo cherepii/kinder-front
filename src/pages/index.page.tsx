@@ -47,6 +47,7 @@ import type { IUser } from '@shared/types'
 import { Button, IconComponent } from '@shared/ui'
 import { Layout } from '@widgets/layout'
 import { FormEnvelop } from '@widgets/upload-photo'
+import clsx from 'clsx'
 import type { GetStaticProps } from 'next'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
@@ -192,7 +193,7 @@ export function Home() {
               <Image
                 src={harryPotterLogo}
                 alt="harry potter logo"
-                className="aspect-[172/42] w-[10.75rem]"
+                className="aspect-[473/114] w-full max-w-[29.5625rem]"
               />
               <h1 className="text-gradient mt-12 text-[3.75rem] font-bold uppercase leading-[4rem]">
                 {t('MAIN.TITLE.FIRST')}
@@ -330,7 +331,10 @@ export function Home() {
                   <Image
                     src={slide.image}
                     alt="model"
-                    className="aspect-[390/374] w-[24.375rem] select-none max-lg:mx-auto"
+                    className={clsx(
+                      'aspect-[390/374] w-[24.375rem] select-none max-lg:mx-auto',
+                      slide.key === 5 && 'drop-shadow-[0_0_16px_rgba(255,255,255,0.7)]'
+                    )}
                   />
                 </SwiperSlide>
               ))}

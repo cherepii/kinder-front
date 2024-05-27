@@ -80,6 +80,7 @@ export const PersonalCabinetModal = (props: IProperties) => {
                     <Image
                       src={`${process.env.NEXT_PUBLIC_SERVER_URL}${file.path}`}
                       alt="uploaded file"
+                      quality={1}
                       fill
                       className="w-ful h-full rounded-xl bg-gray object-cover object-center"
                     />

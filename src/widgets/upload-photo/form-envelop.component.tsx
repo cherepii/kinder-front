@@ -93,8 +93,8 @@ export const FormEnvelop = () => {
   }
 
   const animateFirstSnitch = useCallback(async () => {
-    const randomValueX = Math.floor(Math.random() * 50)
-    const randomValueY = Math.floor(Math.random() * 50)
+    const randomValueX = Math.floor(Math.random() * 10)
+    const randomValueY = Math.floor(Math.random() * 10)
 
     await startFirstSnitch(
       firstScope.current,
@@ -107,8 +107,8 @@ export const FormEnvelop = () => {
   }, [firstScope, startFirstSnitch])
 
   const animateSecondSnitch = useCallback(async () => {
-    const randomValueX = Math.floor(Math.random() * 50)
-    const randomValueY = Math.floor(Math.random() * 50)
+    const randomValueX = Math.floor(Math.random() * 15)
+    const randomValueY = Math.floor(Math.random() * 15)
 
     await startSecondSnitch(
       secondScope.current,
@@ -202,7 +202,10 @@ export const FormEnvelop = () => {
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 containerClassName="my-3"
               />
-              <AttachmentInput onChange={(e) => setPhotos(e.target.files)} />
+              <AttachmentInput
+                uploadedLength={photos?.length}
+                onChange={(e) => setPhotos(e.target.files)}
+              />
             </div>
           </motion.div>
           <Button

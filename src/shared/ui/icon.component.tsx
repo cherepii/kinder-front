@@ -23,6 +23,7 @@ const ferrero = dynamic(() => import('@public/assets/icons/ferrero.svg'))
 const burger = dynamic(() => import('@public/assets/icons/burger.svg'))
 const inputBgMob = dynamic(() => import('@public/assets/icons/input-bg-mob.svg'))
 const close = dynamic(() => import('@public/assets/icons/close.svg'))
+const success = dynamic(() => import('@public/assets/icons/success.svg'))
 const iconTypes = {
   inputBg,
   inputBgMob,
@@ -38,6 +39,7 @@ const iconTypes = {
   ferrero,
   burger,
   giftsEggMob,
+  success,
 }
 
 export type IconsTypes = keyof typeof iconTypes

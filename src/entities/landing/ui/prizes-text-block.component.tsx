@@ -25,7 +25,7 @@ export const PrizesTextBlock = (props: { sectionRef: RefObject<HTMLDivElement> }
   return (
     <motion.div
       style={{ translateX: transformStyle }}
-      className="pb-[13.25rem] pt-[314px] text-secondary-text will-change-transform max-xl:pt-10 max-xl:text-center max-lg:pb-0"
+      className="w-full max-w-[24.1875rem] pb-[13.25rem] pt-[314px] text-secondary-text will-change-transform max-xl:pt-10 max-xl:text-center max-lg:pb-0"
     >
       <h1 className="text-[3.75rem] font-bold leading-[3.75rem] text-primary-text max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
         {t('PRIZES.TITLE')}

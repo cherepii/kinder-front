@@ -5,11 +5,18 @@ import { IconComponent } from '../icon.component'
 
 interface IAttachmentInputProperties extends ComponentProps<'input'> {
   label?: string
+  uploadedLength?: number
 }
-export const AttachmentInput = ({ label, ...rest }: IAttachmentInputProperties) => {
+export const AttachmentInput = ({
+  label,
+  uploadedLength,
+  ...rest
+}: IAttachmentInputProperties) => {
   const id = useId()
 
   const { t } = useTranslation()
+
+  console.log(uploadedLength)
 
   return (
     <label
@@ -30,11 +37,25 @@ export const AttachmentInput = ({ label, ...rest }: IAttachmentInputProperties) 
         hidden
         className="h-0 w-0 border-none outline-none"
       />
-      <div className="flex items-center">
-        <p className="mr-2 font-noto-sans text-[1.875rem] font-medium max-lg:mr-0 max-lg:text-[1.25rem] ">
-          {label ?? t('UPLOAD_FORM.ATTACH')}
-        </p>
-        <IconComponent name="attachment" className="max-lg:scale-[0.7]" />
+      <div className="flex w-full items-center justify-center">
+        {uploadedLength ? (
+          <>
+            <p className="mr-2 font-noto-sans text-[1.875rem] font-medium max-lg:mr-0 max-lg:text-[1.25rem] ">
+              {t('UPLOAD_FORM.UPLOADED')} ({uploadedLength})
+            </p>
+            <IconComponent
+              name="success"
+              className="w-full max-w-[2.5rem] max-lg:scale-[0.7]"
+            />
+          </>
+        ) : (
+          <>
+            <p className="mr-2 font-noto-sans text-[1.875rem] font-medium max-lg:mr-0 max-lg:text-[1.25rem] ">
+              {label ?? t('UPLOAD_FORM.ATTACH')}
+            </p>
+            <IconComponent name="attachment" className=" max-lg:scale-[0.7]" />
+          </>
+        )}
       </div>
     </label>
   )
