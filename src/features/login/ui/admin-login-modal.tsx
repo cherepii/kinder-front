@@ -14,7 +14,7 @@ interface IProperties {
   onSubmit: (value: IFormValues) => void
 }
 export const AdminLoginModal = (props: IProperties) => {
-  const { opened, setOpened, onSubmit } = props
+  const { opened, onSubmit } = props
 
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
