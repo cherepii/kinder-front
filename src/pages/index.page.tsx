@@ -212,7 +212,7 @@ export function Home() {
             <Image
               src={kinder2}
               alt="kinder"
-              className="absolute bottom-[-300px] left-[-30px] z-10 aspect-[335/400] w-[20.9375rem] rotate-[-38deg] max-xl:bottom-[-120%] max-xl:right-[-3.125rem] max-xl:left-auto max-xl:rotate-[-30deg]"
+              className="absolute bottom-[-21rem] left-[-1.875rem] z-10 aspect-[335/400] w-[20.9375rem] rotate-[-38deg] max-xl:bottom-[-120%] max-xl:right-[-3.125rem] max-xl:left-auto max-xl:rotate-[-30deg]"
             />
           </div>
           <Image

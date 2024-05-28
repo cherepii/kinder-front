@@ -16,8 +16,6 @@ export const AttachmentInput = ({
 
   const { t } = useTranslation()
 
-  console.log(uploadedLength)
-
   return (
     <label
       htmlFor={id}

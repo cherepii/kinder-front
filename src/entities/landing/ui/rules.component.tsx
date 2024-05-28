@@ -69,7 +69,7 @@ export const Rules = () => {
             {t('THIRD_BLOCK.SUB_TITLE.TOP')}
             <br /> {t('THIRD_BLOCK.SUB_TITLE.BOTTOM')}
           </p>
-          <Image src={rules3} alt="rule" className="aspect-[266/231] w-full px-5" />
+          <Image src={rules3} alt="rule" className="aspect-[263/237] w-full px-5" />
           <Image src={dividerSmall} alt="small divider" className="mt-auto w-full" />
         </div>
       </motion.div>
