@@ -357,9 +357,13 @@ export function Home() {
             />
           </div>
           <div className="flex w-full items-center justify-center gap-5 pt-[1.875rem] max-lg:flex-col">
-            <Button variant="secondary"> {t('ABOUT.BUTTONS.TELEGRAM')}</Button>
             <Button variant="secondary">
-              <a href="/ПРАВИЛА АКЦИИ HARRY POTTER KINDER JOY.docx" target="_blank">
+              <a href="https://t.me/HarryPotter_Kinder_joy_bot" target="_blank">
+                {t('ABOUT.BUTTONS.TELEGRAM')}
+              </a>
+            </Button>
+            <Button variant="secondary">
+              <a href="/ПРАВИЛА АКЦИИ HARRY POTTER KINDER JOY.pdf" target="_blank">
                 {t('ABOUT.BUTTONS.CONDITIONS')}
               </a>
             </Button>

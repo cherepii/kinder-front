@@ -11,6 +11,7 @@ export const AdminTable = () => {
   const [users, setUsers] = useState<IUser[]>([])
   const [loading, setLoading] = useState(false)
   const [deleteLoading, setDeleteLoading] = useState(false)
+  const [siteEnabled, setSiteEnabled] = useState(false)
 
   const getUsers = useCallback(async () => {
     try {
@@ -23,6 +24,16 @@ export const AdminTable = () => {
       toast.error('Не удалось получить список пользователей!')
     } finally {
       setLoading(false)
+    }
+  }, [])
+
+  const handleEnableSite = useCallback(async (value: boolean) => {
+    setSiteEnabled(value)
+    try {
+      const res = await instance.put('/settings', { siteEnabled: value })
+      if (res.status === 200) toast.success('Изменения сохранены!')
+    } catch {
+      toast.error('Не удалось обновить видимость сайта')
     }
   }, [])
 
@@ -42,15 +53,52 @@ export const AdminTable = () => {
     [getUsers]
   )
 
+  const getSiteEnabled = useCallback(async () => {
+    try {
+      const res = await instance.get('/settings')
+      setSiteEnabled(res.data.siteEnabled || false)
+    } catch (error: any) {
+      console.log(error)
+    }
+  }, [])
+
   useEffect(() => {
     getUsers()
-  }, [getUsers])
+    getSiteEnabled()
+  }, [getUsers, getSiteEnabled])
 
   return (
     <div className="mx-auto mt-20 h-full w-full max-w-[80rem] py-10">
-      <h1 className=" text-center text-[3rem] font-bold leading-[3.75rem] text-primary-text max-lg:text-[2rem] max-lg:leading-[2rem]">
+      <h1 className="text-center text-[3rem] font-bold leading-[3.75rem] text-primary-text max-lg:text-[2rem] max-lg:leading-[2rem]">
         Административная панель Kinder Joy
       </h1>
+      <div className="flex items-center">
+        <input
+          id="checked-checkbox"
+          type="checkbox"
+          checked={siteEnabled}
+          onChange={(e) => handleEnableSite(e.target.checked)}
+          className="peer relative h-4 w-4 cursor-pointer appearance-none rounded-sm border border-primary-text bg-white checked:border-0 checked:bg-primary-text"
+        />
+        <label
+          htmlFor="checked-checkbox"
+          className="mt-0.5 ml-2 cursor-pointer select-none text-lg font-medium leading-[1.25rem]"
+        >
+          Сайт запущен
+        </label>
+        <svg
+          className="absolute ml-0.5 hidden h-3 w-3 peer-checked:block"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
       <div className="mt-8 h-full w-full">
         {loading ? (
           <p className="text-center">Загрузка...</p>

@@ -35,6 +35,8 @@ const Meta = (props: IMetaProperties) => {
         strategy="afterInteractive"
         src="https://www.kinder.com/kz/sites/kinder_kz/files/google_tag/google_tag.script.js"
       />
+      <Script async strategy="afterInteractive" src="/yandex-metrica.js" />
+
       <NextSeo
         title={props.title}
         description={props.description}
