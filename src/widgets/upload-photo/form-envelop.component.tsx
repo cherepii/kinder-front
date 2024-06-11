@@ -51,6 +51,8 @@ export const FormEnvelop = () => {
   }, [toggleAnimationCompleted])
 
   const handleClick = async (e: MouseEvent<HTMLButtonElement>) => {
+    ym(94_073_158, 'reachGoal', 'dw')
+
     if (!photos || !opened) return
     e.stopPropagation()
 
@@ -80,6 +82,8 @@ export const FormEnvelop = () => {
       await instance.post('/files/web-upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       })
+      ym(94_073_158, 'reachGoal', 'sendphoto')
+      ym(94_073_158, 'reachGoal', 'reg')
       toast.success('Фотографии загружены успешно!')
       toggleOpened()
       setName('')

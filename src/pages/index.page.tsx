@@ -172,9 +172,18 @@ export function Home() {
   const giftsReference = useRef(null)
 
   const handlePersonalCabinet = useCallback(() => {
+    ym(94_073_158, 'reachGoal', 'LC')
     if (userData) setPdModal(true)
     else setLoginModal(true)
   }, [userData])
+
+  const handleAppStore = useCallback(() => {
+    console.log('app store')
+    ym(94_073_158, 'reachGoal', 'AS')
+  }, [])
+  const handlePlayMarket = useCallback(() => {
+    ym(94_073_158, 'reachGoal', 'GP')
+  }, [])
 
   return (
     <Layout
@@ -372,14 +381,14 @@ export function Home() {
         <section id="downloads" className="py-[3.75rem]">
           <div className="mx-auto flex w-full max-w-[36.75rem] items-start max-lg:flex-col max-lg:items-center ">
             <div className="mt-6 max-lg:order-2 max-lg:flex max-lg:gap-2">
-              <button className="mb-4 max-lg:mb-0">
+              <button className="mb-4 max-lg:mb-0" onClick={handleAppStore}>
                 <Image
                   src={appStoreDownload}
                   alt="download via app store"
                   className="aspect-[157/52] w-full max-w-[9.8125rem]"
                 />
               </button>
-              <button>
+              <button onClick={handlePlayMarket}>
                 <Image
                   src={playMarketDownload}
                   alt="download via play market"
