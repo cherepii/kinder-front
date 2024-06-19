@@ -16,17 +16,17 @@
   "PRIZES": {
     "TITLE": "Призы",
     "FIRST_BLOCK": {
-      "TITLE": "Iphone 15 Pro",
+      "TITLE": "Смартфон",
       "SUB_TITLE": "с чехлом Harry Potter"
     },
     "SECOND_BLOCK": {
-      "TITLE": "Наушники AirPODS Max"
+      "TITLE": "Беспроводные полноразмерные наушники"
     },
     "THIRD_BLOCK": {
-      "TITLE": "Сертификат 100 000 ₸",
+      "TITLE": "сертификат 100 000 ₸",
       "SUB_TITLE": {
-        "TOP": "в магазин МЕЛОМАН",
-        "BOTTOM": "на коллекцию Harry Potter"
+        "TOP": "на покупку коллекции",
+        "BOTTOM": "мерча Harry Potter"
       }
     }
   },

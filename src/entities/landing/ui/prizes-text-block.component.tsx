@@ -51,7 +51,7 @@ export const PrizesTextBlock = (props: { sectionRef: RefObject<HTMLDivElement> }
       </h3>
       <IconComponent
         name="giftsEgg"
-        className="absolute top-[4.625rem] left-[-42%] z-[-1] rotate-[-12deg] max-xl:hidden"
+        className="absolute top-[84px] left-[-40%] z-[-1] rotate-[-12deg] max-xl:hidden"
       />
       <IconComponent
         name="giftsEggMob"

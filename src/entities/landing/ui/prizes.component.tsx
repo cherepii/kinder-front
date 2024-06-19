@@ -1,6 +1,6 @@
 import ellipseBg from '@public/assets/images/ellipse-bg.png'
 import headphones from '@public/assets/images/headphones.png'
-import meloman from '@public/assets/images/meloman.png'
+import meloman from '@public/assets/images/meloman.jpeg'
 import phone from '@public/assets/images/phone.png'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import Image from 'next/image'
@@ -50,12 +50,12 @@ export const Prizes = () => {
           draggable={false}
           src={phone}
           alt="phone"
-          className="h-full w-full rotate-[41deg] "
+          className="h-full w-full rotate-[41deg]"
         />
       </motion.div>
       <motion.div
         style={{ translateY: melomanStyle }}
-        className="absolute right-0 top-[24.1875rem] z-[2] aspect-[261/266] w-[16.3125rem] will-change-transform max-lg:top-[initial] max-lg:bottom-[-1.875rem] max-lg:right-3 max-lg:w-[14.6875rem]"
+        className="absolute right-[-40px] top-[24.1875rem] z-[2] aspect-[1280/602] w-[16.3125rem] will-change-transform max-lg:top-[initial] max-lg:bottom-[-1.875rem] max-lg:right-3 max-lg:w-[14.6875rem]"
       >
         <Image
           draggable={false}

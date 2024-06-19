@@ -135,6 +135,7 @@ export const AdminTable = () => {
                                 src={`${process.env.NEXT_PUBLIC_SERVER_URL}${file.path}`}
                                 alt="uploaded file"
                                 className="rounded-lg bg-gray object-cover object-center"
+                                unoptimized
                                 fill
                               />
                             </PhotoView>

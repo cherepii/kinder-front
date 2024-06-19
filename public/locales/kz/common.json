@@ -16,17 +16,17 @@
   "PRIZES": {
     "TITLE": "ЖҮЛДЕЛЕР",
     "FIRST_BLOCK": {
-      "TITLE": "Iphone 15 Pro",
+      "TITLE": "Смартфон",
       "SUB_TITLE": "HARRY POTTER ТЫСҚАБЫМЕН"
     },
     "SECOND_BLOCK": {
-      "TITLE": "AirPODS Max ҚҰЛАҚҚАПТАРЫ"
+      "TITLE": "сымсыз толықөлшемді құлаққаптар"
     },
     "THIRD_BLOCK": {
-      "TITLE": "100 000 ₸ СЕРТИФИКАТ",
+      "TITLE": "Harry Potter мерчінің",
       "SUB_TITLE": {
-        "TOP": "МЕЛОМАН ДҮКЕНІНДЕ",
-        "BOTTOM": "HARRY POTTER ТОПТАМАСЫНА"
+        "TOP": "топтамасын сатып алуға",
+        "BOTTOM": "100 000 теңгеге сертификат"
       }
     }
   },
