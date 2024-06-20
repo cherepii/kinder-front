@@ -65,7 +65,7 @@ export const Footer = React.memo((props: IFooterProperties) => {
           <div className="mx-5 flex items-center text-xs max-xl:mx-0 max-xl:mt-3">
             <Link
               href={{ pathname, query }}
-              locale="kz"
+              locale="kk"
               scroll={false}
               className="border-r border-r-secondary-text px-4 max-xl:pl-0"
             >

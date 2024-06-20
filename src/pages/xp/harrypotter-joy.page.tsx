@@ -159,7 +159,7 @@ const SLIDER_SLIDES = [
   },
 ]
 
-export function Home() {
+function HomePage() {
   const isMob = useIsMob()
 
   const { t } = useTranslation()
@@ -420,7 +420,7 @@ export function Home() {
   )
 }
 
-export default Home
+export default HomePage
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {

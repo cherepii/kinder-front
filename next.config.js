@@ -19,13 +19,23 @@ module.exports = withBundleAnalyzer({
   },
 
   i18n,
+
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/xp/harrypotter-joy',
+        permanent: false,
+      }
+    ]
+  },
   
   poweredByHeader: false,
   trailingSlash: true,
   images: {
     domains: ['localhost', 'api.kinderpromo.kz']
   },
-  basePath: '',
+  basePath: '/kz',
   // The starter code load resources from `public` folder with `router.basePath` in React components.
   // So, the source code is "basePath-ready".
   // You can remove `basePath` if you don't need it.
