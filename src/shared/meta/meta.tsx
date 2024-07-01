@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import Script from 'next/script'
 import { NextSeo } from 'next-seo'
 
@@ -12,8 +11,6 @@ type IMetaProperties = {
 }
 
 const Meta = (props: IMetaProperties) => {
-  const router = useRouter()
-
   return (
     <>
       <Head>
