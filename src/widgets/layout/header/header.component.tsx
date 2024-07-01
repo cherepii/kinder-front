@@ -1,4 +1,4 @@
-// import logo from '@public/assets/images/logo.png'
+import logo from '@public/assets/images/logo.png'
 import { IconComponent } from '@shared/ui'
 import clsx from 'clsx'
 import Image from 'next/image'
@@ -61,13 +61,7 @@ export const Header = React.memo((props: IHeaderProperties) => {
         <IconComponent name="burger" />
       </div>
       <Link href="/" className="absolute left-[0.9375rem] top-0 ">
-        <Image
-          alt="Logo"
-          src={'/kz/assets/images/logo.png'}
-          width={300}
-          height={300}
-          className="aspect-[200/110] w-[12.5rem]"
-        />
+        <Image alt="Logo" src={logo} className="aspect-[200/110] w-[12.5rem]" />
       </Link>
     </header>
   )

@@ -39,7 +39,7 @@ module.exports = withBundleAnalyzer({
       {
         source: '/:path*',
         headers: [
-          {key: 'Access-Control-Allow-Origin', value: '*'}
+          { key: 'Access-Control-Allow-Origin', value: '*' }
         ]
       }
     ]
@@ -49,7 +49,8 @@ module.exports = withBundleAnalyzer({
   poweredByHeader: false,
   trailingSlash: true,
   images: {
-    domains: ['localhost', 'api.kinderpromo.kz']
+    domains: ['localhost', 'api.kinderpromo.kz', 'kinderpromo.kz'],
+    path: 'https://kinderpromo.kz/kz/_next/image'
   },
   basePath: '/kz',
   // The starter code load resources from `public` folder with `router.basePath` in React components.
