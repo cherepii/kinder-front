@@ -23,7 +23,7 @@ const Meta = (props: IMetaProperties) => {
           content="width=device-width,initial-scale=1"
           key="viewport"
         />
-        <link rel="icon" href={`${router.basePath}/favicon.ico`} key="favicon" />
+        <link rel="icon" href={'https://kinderpromo.kz/kz/favicon.ico'} key="favicon" />
       </Head>
       <Script
         async
