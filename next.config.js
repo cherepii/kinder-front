@@ -33,8 +33,12 @@ module.exports = withBundleAnalyzer({
       }
     ]
   },
+
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+  },
   
-  assetPrefix: isProd ? 'https://kinderpromo.kz/' : undefined,
+  assetPrefix: isProd ? 'https://kinderpromo.kz' : 'http://localhost:3000/kz',
   poweredByHeader: false,
   trailingSlash: true,
   images: {
