@@ -50,7 +50,7 @@ module.exports = withBundleAnalyzer({
   trailingSlash: true,
   images: {
     domains: ['localhost', 'api.kinderpromo.kz', 'kinderpromo.kz'],
-    path: 'https://kinderpromo.kz/kz/_next/image'
+    path: isProd ? 'https://kinderpromo.kz/kz/_next/image' : 'http://localhost:3000/kz/_next/image'
   },
   basePath: '/kz',
   

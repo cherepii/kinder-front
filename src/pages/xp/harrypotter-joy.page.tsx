@@ -1,10 +1,16 @@
 import {
+  ForParticipationBlocks,
   LoginModal,
+  LuckiestBlock,
+  LuckiestTextBlock,
   PersonalCabinetModal,
   Prizes,
   PrizesTextBlock,
   Rules,
+  WeeklyDraw,
+  WeeklyDrawTextBlock,
 } from '@entities/landing'
+import activationAvatar from '@public/assets/images/activation-avatar.png'
 import appStoreDownload from '@public/assets/images/app-store-download.png'
 import divider from '@public/assets/images/divider.png'
 import downloadPoster from '@public/assets/images/download-poster.png'
@@ -170,6 +176,8 @@ function HomePage() {
   const [userData, setUserData] = useState<IUser | null>(null)
 
   const giftsReference = useRef(null)
+  const weeklyDrawReference = useRef(null)
+  const luckiestReference = useRef(null)
 
   const handlePersonalCabinet = useCallback(() => {
     ym(94_073_158, 'reachGoal', 'LC')
@@ -178,7 +186,6 @@ function HomePage() {
   }, [userData])
 
   const handleAppStore = useCallback(() => {
-    console.log('app store')
     ym(94_073_158, 'reachGoal', 'AS')
   }, [])
   const handlePlayMarket = useCallback(() => {
@@ -248,7 +255,7 @@ function HomePage() {
             />
           </div>
         </section>
-        <section ref={giftsReference} id="gifts" className="relative  overflow-hidden">
+        <section id="rules">
           <div className="relative hidden px-6 pt-[4.3125rem] pb-11 max-xl:block">
             <Image
               src={kinder2}
@@ -276,12 +283,6 @@ function HomePage() {
               />
             </div>
           </div>
-          <div className="mx-auto flex w-full max-w-[62.0625rem] px-5 max-xl:flex-col max-xl:px-0">
-            <PrizesTextBlock sectionRef={giftsReference} />
-            <Prizes />
-          </div>
-        </section>
-        <section id="rules">
           <div className="mx-auto mt-[3.75rem] w-full max-w-[59.0625rem] max-lg:mt-20">
             <h1 className="top-6 text-center text-[3.75rem] font-bold leading-[3.75rem] text-primary-text max-lg:sticky max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
               {t('RULES.TITLE')}
@@ -298,6 +299,60 @@ function HomePage() {
             <Button onClick={handlePersonalCabinet} variant="primary">
               {t('UPLOAD_FORM.PERSONAL_CABINET')}
             </Button>
+          </div>
+        </section>
+        <section ref={giftsReference} id="gifts" className="relative  overflow-hidden">
+          <div className="mx-auto flex w-full max-w-[62.0625rem] px-5 max-xl:flex-col max-xl:px-0">
+            <PrizesTextBlock sectionRef={giftsReference} />
+            <Prizes sectionRef={giftsReference} />
+          </div>
+        </section>
+        <section
+          ref={weeklyDrawReference}
+          id="weekly-draw"
+          className="relative overflow-hidden"
+        >
+          <div className="mx-auto flex w-full max-w-[62.0625rem] px-5 max-xl:flex-col-reverse max-xl:px-0">
+            <WeeklyDraw sectionRef={weeklyDrawReference} />
+            <WeeklyDrawTextBlock sectionRef={weeklyDrawReference} />
+          </div>
+        </section>
+        <section id="activation">
+          <div className="mx-auto w-full max-w-[49.625rem] py-[3.75rem] max-lg:py-0">
+            <h1 className="text-center text-[3.75rem] font-bold leading-[3.75rem] text-primary-text max-lg:mx-auto max-lg:max-w-[240px] max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
+              {t('ACTIVATION.TITLE')}
+            </h1>
+            <h5 className="mt-2 text-center text-[2.25rem] font-bold leading-[2.25rem] text-[#5C341B] max-lg:text-[1.25rem] max-lg:leading-[1.25rem]">
+              {t('ACTIVATION.SUB_TITLE')}
+            </h5>
+            <article className="mt-[1.875rem] flex w-full items-center justify-between max-lg:flex-col max-lg:px-8">
+              <Image
+                src={activationAvatar}
+                alt="avatar for activation"
+                className="aspect-[212/250] w-full max-w-[13.25rem] object-cover object-center"
+              />
+              <p className="w-full max-w-[28.5rem] text-[1.875rem] leading-[2.25rem] text-[##5C341B] max-lg:text-center max-lg:text-[1.25rem] max-lg:leading-[1.5rem]">
+                {t('ACTIVATION.DESCRIPTION')}
+              </p>
+            </article>
+          </div>
+        </section>
+        <section id="for_participation">
+          <div className="mx-auto w-full max-w-[59.0625rem] py-[3.75rem] max-lg:py-20">
+            <h1 className="top-6 text-center text-[3.75rem] font-bold leading-[3.75rem] text-primary-text max-lg:sticky max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
+              {t('FOR_PARTICIPATION.TITLE')}
+            </h1>
+            <ForParticipationBlocks />
+          </div>
+        </section>
+        <section
+          ref={luckiestReference}
+          id="luckiest"
+          className="relative overflow-hidden"
+        >
+          <div className="mx-auto flex w-full max-w-[62.0625rem] px-5 max-xl:flex-col max-xl:px-0">
+            <LuckiestTextBlock sectionRef={luckiestReference} />
+            <LuckiestBlock sectionRef={luckiestReference} />
           </div>
         </section>
         <section id="about" className="overflow-clip pt-[3.75rem] max-lg:pt-8">

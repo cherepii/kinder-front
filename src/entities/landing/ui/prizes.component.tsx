@@ -1,10 +1,10 @@
 import ellipseBg from '@public/assets/images/ellipse-bg.png'
 import headphones from '@public/assets/images/headphones.png'
-import meloman from '@public/assets/images/meloman.jpeg'
+import meloman from '@public/assets/images/meloman.png'
 import phone from '@public/assets/images/phone.png'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import Image from 'next/image'
-import { useRef } from 'react'
+import type { RefObject } from 'react'
 
 const springConfig = {
   stiffness: 400,
@@ -12,12 +12,13 @@ const springConfig = {
   damping: 70,
 }
 
-export const Prizes = () => {
-  const containerReference = useRef(null)
+export const Prizes = (props: { sectionRef: RefObject<HTMLDivElement> }) => {
+  // const containerReference = useRef(null)
+  const { sectionRef } = props
 
   const { scrollYProgress } = useScroll({
-    target: containerReference,
-    offset: ['end end', 'start start'],
+    target: sectionRef,
+    offset: ['end end', 'center start'],
   })
 
   const headphonesTransform = useTransform(scrollYProgress, [0, 1], [0, -600])
@@ -31,9 +32,9 @@ export const Prizes = () => {
   return (
     <div className="relative top-[9.625rem] flex flex-1 max-lg:top-0 max-lg:pt-[34.375rem]">
       <motion.div
-        ref={containerReference}
+        // ref={containerReference}
         style={{ translateY: headphonesStyle }}
-        className="absolute right-[13.4375rem] top-[3.125rem] z-[3] aspect-[348/478] w-[23.625rem] will-change-transform max-lg:top-[3.375rem] max-lg:right-[initial] max-lg:left-[-6rem] max-lg:w-[21.5625rem]"
+        className="absolute right-[190px] top-[170px] z-[3] aspect-[348/478] w-[23.625rem] will-change-transform max-lg:top-[3.375rem] max-lg:right-[initial] max-lg:left-[-6rem] max-lg:w-[21.5625rem]"
       >
         <Image
           draggable={false}
@@ -55,7 +56,7 @@ export const Prizes = () => {
       </motion.div>
       <motion.div
         style={{ translateY: melomanStyle }}
-        className="absolute right-[-40px] top-[24.1875rem] z-[2] aspect-[1280/602] w-[16.3125rem] will-change-transform max-lg:top-[initial] max-lg:bottom-[-1.875rem] max-lg:right-3 max-lg:w-[14.6875rem]"
+        className="absolute right-[-20px] bottom-[140px] z-[2] aspect-[258/264] w-[16.125rem] will-change-transform max-lg:top-[initial] max-lg:bottom-[-1.875rem] max-lg:right-3 max-lg:w-[14.6875rem]"
       >
         <Image
           draggable={false}
