@@ -17,15 +17,18 @@
     "TITLE": "Главный розыгрыш",
     "FIRST_BLOCK": {
       "TITLE": "Смартфон",
-      "SUB_TITLE": "с чехлом Harry Potter"
+      "SUB_TITLE": "с чехлом Harry Potter",
+      "UNDER_TITLE": ""
     },
     "SECOND_BLOCK": {
       "TITLE": "наушники",
-      "SUB_TITLE": "беспроводные полноразмерные"
+      "SUB_TITLE": "беспроводные полноразмерные",
+      "UNDER_TITLE": ""
     },
     "THIRD_BLOCK": {
       "TITLE": "Сертификат на 100 000₸",
-      "SUB_TITLE": "на коллекцию Harry Potter"
+      "SUB_TITLE": "на коллекцию Harry Potter",
+      "UNDER_TITLE": ""
     }
   },
   "WEEKLY_DRAW": {

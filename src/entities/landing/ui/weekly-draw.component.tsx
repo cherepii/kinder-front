@@ -16,6 +16,7 @@ export const WeeklyDraw = (props: { sectionRef: RefObject<HTMLDivElement> }) => 
   const { sectionRef } = props
 
   const { scrollYProgress } = useScroll({
+    layoutEffect: false,
     target: sectionRef,
     offset: ['end end', 'center start'],
   })

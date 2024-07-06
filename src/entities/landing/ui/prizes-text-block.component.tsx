@@ -14,9 +14,9 @@ export const PrizesTextBlock = (props: { sectionRef: RefObject<HTMLDivElement> }
   const { t } = useTranslation()
 
   const { scrollYProgress } = useScroll({
+    layoutEffect: false,
     target: sectionRef,
     offset: ['end end', 'center start'],
-    layoutEffect: false,
   })
 
   const transformValue = useTransform(scrollYProgress, [0, 1], [0, -300])

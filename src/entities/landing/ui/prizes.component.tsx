@@ -13,10 +13,10 @@ const springConfig = {
 }
 
 export const Prizes = (props: { sectionRef: RefObject<HTMLDivElement> }) => {
-  // const containerReference = useRef(null)
   const { sectionRef } = props
 
   const { scrollYProgress } = useScroll({
+    layoutEffect: false,
     target: sectionRef,
     offset: ['end end', 'center start'],
   })
@@ -32,7 +32,6 @@ export const Prizes = (props: { sectionRef: RefObject<HTMLDivElement> }) => {
   return (
     <div className="relative top-[9.625rem] flex flex-1 max-lg:top-0 max-lg:pt-[34.375rem]">
       <motion.div
-        // ref={containerReference}
         style={{ translateY: headphonesStyle }}
         className="absolute right-[190px] top-[170px] z-[3] aspect-[348/478] w-[23.625rem] will-change-transform max-lg:top-[3.375rem] max-lg:right-[initial] max-lg:left-[-6rem] max-lg:w-[21.5625rem]"
       >
