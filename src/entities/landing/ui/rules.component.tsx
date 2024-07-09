@@ -29,7 +29,7 @@ export const Rules = () => {
         transition={springConfig}
         className="top-20 flex h-[31.5625rem] w-full max-w-[19.6875rem] items-center justify-center max-lg:sticky"
       >
-        <div className="mt-10 flex h-full w-full rotate-[-1deg] flex-col rounded-[1.75rem] bg-[#F1B72B] py-5 px-[1.125rem] text-center drop-shadow-card-sm max-lg:mt-0">
+        <div className="mt-[6.2125rem] flex h-full w-full rotate-[-1deg] flex-col rounded-[1.75rem] bg-[#F1B72B] px-[1.125rem] py-5 text-center drop-shadow-card-sm max-lg:mt-0">
           <Image src={dividerSmall} alt="small divider" className="w-full" />
           <p className="mt-12 mb-11 text-[1.875rem] font-bold leading-[1.875rem]">
             {t('FIRST_BLOCK.TOP')}

@@ -26,7 +26,7 @@ export const WeeklyDrawTextBlock = (props: { sectionRef: RefObject<HTMLDivElemen
   return (
     <motion.div
       style={{ translateX: transformStyle }}
-      className="w-full max-w-[24.1875rem] pb-[14rem] pt-[19.625rem] text-right text-secondary-text will-change-transform max-xl:pt-10 max-lg:pb-0 max-lg:text-center"
+      className="w-full max-w-[24.1875rem] pb-[14rem] pt-[19.625rem] text-right text-secondary-text will-change-transform max-xl:pt-10 max-lg:mx-auto max-lg:pb-0 max-lg:text-center"
     >
       <h1 className="text-[3.75rem] font-bold leading-[3.75rem] text-primary-text max-lg:mx-auto max-lg:max-w-[15rem] max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
         {t('WEEKLY_DRAW.TITLE')}
@@ -35,7 +35,7 @@ export const WeeklyDrawTextBlock = (props: { sectionRef: RefObject<HTMLDivElemen
         {t('WEEKLY_DRAW.FIRST_BLOCK.TITLE')}
       </h3>
       <h3 className="mt-[1.875rem] text-[3rem] font-bold leading-[3rem] max-lg:mt-6 max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
-        <span className="block text-[1.875rem] font-normal leading-[1.75rem] max-lg:text-[1.25rem] max-lg:leading-[1.5rem]">
+        <span className="block text-[1.875rem] font-normal leading-[1.75rem] max-lg:mx-auto max-lg:max-w-[19.8125rem] max-lg:text-[1.25rem] max-lg:leading-[1.5rem]">
           {t('WEEKLY_DRAW.SECOND_BLOCK.UNDER_TITLE')}
         </span>
         {t('WEEKLY_DRAW.SECOND_BLOCK.TITLE')}

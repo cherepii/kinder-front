@@ -1,8 +1,10 @@
 import eggsBox from '@public/assets/images/eggs-box.png'
 import ellipseBg from '@public/assets/images/ellipse-bg.png'
 import projectorImage from '@public/assets/images/projector.png'
+import clsx from 'clsx'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import type { RefObject } from 'react'
 
 const springConfig = {
@@ -13,6 +15,9 @@ const springConfig = {
 
 export const LuckiestBlock = (props: { sectionRef: RefObject<HTMLDivElement> }) => {
   const { sectionRef } = props
+
+  const { locale } = useRouter()
+  const isKz = locale === 'kk'
 
   const { scrollYProgress } = useScroll({
     layoutEffect: false,
@@ -30,7 +35,10 @@ export const LuckiestBlock = (props: { sectionRef: RefObject<HTMLDivElement> }) 
     <div className="relative top-[10.25rem] flex flex-1 max-lg:top-0 max-lg:pt-[34.375rem]">
       <motion.div
         style={{ translateY: eggsStyle }}
-        className="absolute left-[-50px] bottom-[250px] z-[3] aspect-[376/391] w-[23.5rem] will-change-transform max-lg:bottom-[initial] max-lg:left-[-75px] max-lg:top-[-30px] max-lg:w-[20.4375rem]"
+        className={clsx(
+          'absolute left-[-50px] z-[3] aspect-[376/391] w-[23.5rem] will-change-transform max-lg:bottom-[initial] max-lg:left-[-75px] max-lg:top-[-30px] max-lg:w-[20.4375rem]',
+          isKz ? 'bottom-[348px]' : 'bottom-[250px]'
+        )}
       >
         <Image
           draggable={false}

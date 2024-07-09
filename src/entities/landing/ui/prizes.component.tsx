@@ -33,7 +33,7 @@ export const Prizes = (props: { sectionRef: RefObject<HTMLDivElement> }) => {
     <div className="relative top-[9.625rem] flex flex-1 max-lg:top-0 max-lg:pt-[34.375rem]">
       <motion.div
         style={{ translateY: headphonesStyle }}
-        className="absolute right-[190px] top-[170px] z-[3] aspect-[348/478] w-[23.625rem] will-change-transform max-lg:top-[3.375rem] max-lg:right-[initial] max-lg:left-[-6rem] max-lg:w-[21.5625rem]"
+        className="absolute right-[190px] top-[170px] z-[3] aspect-[348/478] w-[23.625rem] will-change-transform max-lg:top-[-8px] max-lg:right-[initial] max-lg:left-[-6rem] max-lg:w-[21.5625rem]"
       >
         <Image
           draggable={false}
@@ -44,7 +44,7 @@ export const Prizes = (props: { sectionRef: RefObject<HTMLDivElement> }) => {
       </motion.div>
       <motion.div
         style={{ translateY: phoneStyle }}
-        className="absolute right-0 top-0 z-[1] aspect-[302/473] w-[18.875rem] will-change-transform max-lg:top-[3.5rem] max-lg:right-[4.375rem] max-lg:w-[14.5625rem]"
+        className="absolute right-0 top-0 z-[1] aspect-[302/473] w-[18.875rem] will-change-transform max-lg:top-[36px] max-lg:right-[20px] max-lg:w-[14.5625rem]"
       >
         <Image
           draggable={false}
@@ -55,7 +55,7 @@ export const Prizes = (props: { sectionRef: RefObject<HTMLDivElement> }) => {
       </motion.div>
       <motion.div
         style={{ translateY: melomanStyle }}
-        className="absolute right-[-20px] bottom-[140px] z-[2] aspect-[258/264] w-[16.125rem] will-change-transform max-lg:top-[initial] max-lg:bottom-[-1.875rem] max-lg:right-3 max-lg:w-[14.6875rem]"
+        className="absolute right-[-20px] bottom-[140px] z-[2] aspect-[258/264] w-[16.125rem] will-change-transform max-lg:top-[initial] max-lg:bottom-[-10px] max-lg:right-3 max-lg:w-[14.6875rem]"
       >
         <Image
           draggable={false}

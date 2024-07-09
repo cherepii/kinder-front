@@ -205,16 +205,16 @@ function HomePage() {
       <Layout.Main className="flex flex-1 flex-col">
         <section id="main">
           <div className="relative mx-auto mt-7 flex w-max items-start px-5 max-2xl:w-full max-xl:hidden">
-            <div className="mt-[3.125rem] w-full max-w-[22.5rem]">
+            <div className="mt-[30px] w-full max-w-[22.5rem]">
               <Image
                 src={harryPotterLogo}
                 alt="harry potter logo"
-                className="aspect-[473/114] w-full max-w-[29.5625rem]"
+                className="aspect-[172/41] w-full max-w-[10.75rem]"
               />
               <h1 className="text-gradient mt-12 text-[3.75rem] font-bold uppercase leading-[4rem]">
                 {t('MAIN.TITLE.FIRST')}
               </h1>
-              <h5 className="mt-2 text-4xl font-bold leading-9 text-[#934A20]">
+              <h5 className="text-4xl font-bold leading-9 text-[#934A20]">
                 {t('MAIN.TITLE.SECOND')}
               </h5>
             </div>
@@ -228,13 +228,13 @@ function HomePage() {
             <Image
               src={kinder2}
               alt="kinder"
-              className="absolute bottom-[-21rem] left-[-1.875rem] z-10 aspect-[335/400] w-[20.9375rem] rotate-[-38deg] max-xl:bottom-[-120%] max-xl:right-[-3.125rem] max-xl:left-auto max-xl:rotate-[-30deg]"
+              className="absolute bottom-[-260px] left-[-1.875rem] z-10 aspect-[335/394] w-[335px] rotate-[-38deg] max-xl:bottom-[-120%] max-xl:right-[-3.125rem] max-xl:left-auto max-xl:rotate-[-30deg]"
             />
           </div>
           <Image
             src={divider}
             alt="divider"
-            className="h-[3.5rem] w-full object-cover object-center max-xl:hidden"
+            className="h-[3.5rem] w-full max-xl:hidden"
           />
           {/* mobile section */}
           <div className="hidden pt-5 max-xl:block">
@@ -283,7 +283,7 @@ function HomePage() {
               />
             </div>
           </div>
-          <div className="mx-auto mt-[3.75rem] w-full max-w-[59.0625rem] max-lg:mt-20">
+          <div className="mx-auto mt-[80px] w-full max-w-[59.0625rem] max-lg:mt-20">
             <h1 className="top-6 text-center text-[3.75rem] font-bold leading-[3.75rem] text-primary-text max-lg:sticky max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
               {t('RULES.TITLE')}
             </h1>
@@ -367,7 +367,11 @@ function HomePage() {
             {t('ABOUT.SUB_TITLE.BOTTOM')}
           </h5>
           <div className="mx-auto mt-[2.0625rem] flex w-full max-w-[51.25rem] items-center justify-between max-lg:flex-col">
-            <Image src={kinder} alt="kinder" className="aspect-[352/384] max-w-[22rem]" />
+            <Image
+              src={kinder}
+              alt="kinder"
+              className="aspect-[334/296] w-full max-w-[334px]"
+            />
             <article className="w-full max-w-[25.625rem] text-left text-[30px] max-lg:mt-5 max-lg:text-center max-lg:text-xl">
               <p>{t('ABOUT.TEXT_BLOCK.FIRST')}</p>
               <p className="mt-4 max-lg:mt-6">
@@ -454,7 +458,7 @@ function HomePage() {
             <Image
               src={downloadPoster}
               alt="download kinder app"
-              className="aspect-[378/196] w-full max-w-[23.625rem] max-lg:order-1"
+              className="aspect-[378/196] w-full max-w-[23.625rem] max-lg:order-1 max-lg:max-w-[291px]"
             />
           </div>
         </section>

@@ -97,7 +97,7 @@ export const ForParticipationBlocks = () => {
         initial={{ translateY: isMob ? 0 : 350 }}
         animate={{ translateY: isMob ? 0 : inView ? 0 : 350 }}
         transition={{ ...springConfig, delay: 0.4 }}
-        className="top-20 flex h-[31.5625rem] w-full max-w-[315px] items-center justify-center max-lg:sticky "
+        className="top-20 flex h-[31.5625rem] w-full max-w-[19.6875rem] items-center justify-center max-lg:sticky "
       >
         <div className="mt-12 ml-[-0.25rem] flex h-full w-full rotate-[-4deg] flex-col rounded-[1.75rem] bg-[#FFFFFF] py-5 text-center drop-shadow-card-sm max-lg:ml-0 max-lg:mt-0">
           <Image
@@ -116,7 +116,7 @@ export const ForParticipationBlocks = () => {
           <Image
             src={image3}
             alt="for participation 3"
-            className="aspect-[317/234] w-full px-5"
+            className="aspect-[312/223] w-full"
           />
           <span className="block px-[2.5rem] text-[0.625rem] leading-3">
             {t('THIRD_BLOCK.DESC')}

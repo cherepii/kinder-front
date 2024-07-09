@@ -27,7 +27,7 @@ export const PrizesTextBlock = (props: { sectionRef: RefObject<HTMLDivElement> }
       style={{ translateX: transformStyle }}
       className="w-full max-w-[26.25rem] pb-[12.5rem] pt-[18.5rem] text-secondary-text will-change-transform max-xl:mt-10 max-xl:pt-0 max-xl:text-center max-lg:pb-0"
     >
-      <h1 className="text-[3.75rem] font-bold leading-[3.75rem] text-primary-text max-lg:mx-auto max-lg:max-w-[15rem] max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
+      <h1 className="text-[3.75rem] font-bold leading-[3.75rem] text-primary-text max-lg:mx-auto max-lg:max-w-[220px] max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
         {t('PRIZES.TITLE')}
       </h1>
       <h3 className="mt-[1.875rem] text-[3rem] font-bold leading-[3rem] max-lg:mt-6 max-lg:text-[2.25rem] max-lg:leading-[2.25rem]">
@@ -63,7 +63,7 @@ export const PrizesTextBlock = (props: { sectionRef: RefObject<HTMLDivElement> }
       />
       <IconComponent
         name="giftsEggMob"
-        className="absolute top-[2.625rem] right-[-36px] z-[-1] hidden max-xl:block"
+        className="absolute top-[1.825rem] right-[-36px] z-[-1] hidden max-xl:block"
       />
     </motion.div>
   )
