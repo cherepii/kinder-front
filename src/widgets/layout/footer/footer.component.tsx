@@ -13,6 +13,7 @@ export const Footer = React.memo((props: IFooterProperties) => {
   const { className } = props
 
   const { pathname, query } = useRouter()
+  console.log(query)
 
   const { t } = useTranslation(undefined, { keyPrefix: 'FOOTER' })
 

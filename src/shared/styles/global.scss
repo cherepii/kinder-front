@@ -23,17 +23,17 @@
     background: radial-gradient(#F8DB95 45%, #fff 72%)
   }
 
-  .users-table {
-    font-family: 'Noto Sans';
+  .files-table {
     & th {
-      font-size: 20px;
+      font-size: 18px;
+      line-height: 22px;
       font-weight: bold;
-      padding: 5px;
+      padding: 8px;
       background: #efefef;
       border: 1px solid #dddddd;
     }
     & td {
-      font-size: 18px;
+      font-size: 16px;
       border: 1px solid #dddddd;
       padding: 5px;
     }
@@ -76,11 +76,17 @@ body {
 }
 
 table {
+  font-family: 'Noto Sans';
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
   overflow: hidden;
   background-color: #fff;
+
+  td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 code {

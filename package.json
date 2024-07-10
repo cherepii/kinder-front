@@ -21,6 +21,7 @@
     "@next/bundle-analyzer": "^13.2.4",
     "axios": "^1.6.8",
     "clsx": "^1.2.1",
+    "date-fns": "^3.6.0",
     "framer-motion": "^11.1.9",
     "i18next": "^23.11.4",
     "next": "^13.2.4",

@@ -1,5 +1,5 @@
 import { instance } from '@shared/api'
-import type { IUser } from '@shared/types'
+import { type IUser, statusesColorMap, statusesMap } from '@shared/types'
 import { IconComponent } from '@shared/ui'
 import clsx from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -73,17 +73,24 @@ export const PersonalCabinetModal = (props: IProperties) => {
               </p>
               <div className="mt-6 grid w-full grid-cols-[repeat(3,minmax(100px,160px))] gap-x-5 gap-y-[3.375rem] overflow-y-auto max-lg:mt-[0.875rem] max-lg:gap-y-8 max-lg:gap-x-3">
                 {userData?.files.map((file) => (
-                  <div
-                    key={file._id}
-                    className="relative aspect-square w-full rounded-xl"
-                  >
-                    <Image
-                      src={`${process.env.NEXT_PUBLIC_SERVER_URL}${file.path}`}
-                      alt="uploaded file"
-                      quality={1}
-                      fill
-                      className="w-ful h-full rounded-xl bg-gray object-cover object-center"
-                    />
+                  <div key={file._id}>
+                    <div className="relative aspect-square w-full rounded-xl">
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_SERVER_URL}${file.path}`}
+                        alt="uploaded file"
+                        quality={1}
+                        fill
+                        className="w-ful h-full rounded-xl rounded-b-none bg-gray object-cover object-center"
+                      />
+                    </div>
+                    <div
+                      className="w-full py-2"
+                      style={{ backgroundColor: statusesColorMap[file.status] }}
+                    >
+                      <p className="text-center text-lg text-white">
+                        {statusesMap[file.status]}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
