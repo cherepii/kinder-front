@@ -20,9 +20,9 @@ export const AdminTable = () => {
   const [opened, setOpened] = useState(false)
   const toggleOpened = useCallback(() => setOpened((previous) => !previous), [])
 
-  const getFiles = useCallback(async () => {
+  const getFiles = useCallback(async (shouldResetLoadingState = true) => {
     try {
-      setLoading(true)
+      if (shouldResetLoadingState) setLoading(true)
       const res = await instance.get<{ files: IFile[] }>('/files/get-all')
       if (res.data.files) {
         setFiles(res.data.files)
@@ -30,7 +30,7 @@ export const AdminTable = () => {
     } catch {
       toast.error('Не удалось получить список файлов!')
     } finally {
-      setLoading(false)
+      if (shouldResetLoadingState) setLoading(false)
     }
   }, [])
 
@@ -57,7 +57,7 @@ export const AdminTable = () => {
       try {
         setDeleteLoading(true)
         await instance.delete(`/files/${id}`)
-        await getFiles()
+        await getFiles(false)
       } catch (error: any) {
         console.log(error)
         toast.error(error?.response?.data?.message || 'Не удалось удалить файл')
@@ -193,7 +193,7 @@ export const AdminTable = () => {
         opened={opened}
         fileId={activeFileId}
         toggleOpened={toggleOpened}
-        onSuccessStatusChange={getFiles}
+        onSuccessStatusChange={() => getFiles(false)}
       />
     </div>
   )

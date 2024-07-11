@@ -1,6 +1,7 @@
 import { instance } from '@shared/api'
 import { FileStatusesEnum, statusesMap } from '@shared/types'
 import { Button, IconComponent } from '@shared/ui'
+import clsx from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
@@ -14,6 +15,8 @@ interface IProperties {
 export const ChangeFileStatusModal = (props: IProperties) => {
   const { fileId, opened, toggleOpened, onSuccessStatusChange } = props
 
+  const [loading, setLoading] = useState(false)
+
   const [statusValue, setStatusValue] = useState<FileStatusesEnum>(
     FileStatusesEnum.SIGNED
   )
@@ -25,6 +28,7 @@ export const ChangeFileStatusModal = (props: IProperties) => {
     }
 
     try {
+      setLoading(true)
       const res = await instance.put(`/files/${fileId}`, { status: statusValue })
       toggleOpened()
       onSuccessStatusChange()
@@ -35,6 +39,8 @@ export const ChangeFileStatusModal = (props: IProperties) => {
       }
     } catch {
       toast.error('Не удалось поменять статус. Попробуйте снова')
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -67,7 +73,14 @@ export const ChangeFileStatusModal = (props: IProperties) => {
                   </option>
                 ))}
               </select>
-              <Button containerClassName="mt-auto" onClick={handleChangeStatus}>
+              <Button
+                disabled={loading}
+                containerClassName={clsx(
+                  'mt-auto opacity-100',
+                  loading && 'animate-pulse'
+                )}
+                onClick={handleChangeStatus}
+              >
                 Сохранить
               </Button>
             </div>
