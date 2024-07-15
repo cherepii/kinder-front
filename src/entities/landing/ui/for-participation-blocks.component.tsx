@@ -36,15 +36,18 @@ export const ForParticipationBlocks = () => {
             className="w-full px-[1.125rem]"
           />
           <div className="mt-12 mb-2 px-[14px] text-white">
-            <p className="text-xl font-normal leading-[1.1rem]">
-              {t('FIRST_BLOCK.UNDER_TITLE')}
-            </p>
-            <h3 className="text-[1.875rem] font-bold leading-[1.875rem]">
-              {t('FIRST_BLOCK.TITLE')}
-            </h3>
-            <p className="text-xl font-normal leading-[1.1rem]">
-              {t('FIRST_BLOCK.SUB_TITLE')}
-            </p>
+            <p
+              className="text-xl font-normal leading-[1.1rem]"
+              dangerouslySetInnerHTML={{ __html: t('FIRST_BLOCK.UNDER_TITLE') }}
+            />
+            <h3
+              className="text-[1.875rem] font-bold leading-[1.875rem]"
+              dangerouslySetInnerHTML={{ __html: t('FIRST_BLOCK.TITLE') }}
+            />
+            <p
+              className="text-xl font-normal leading-[1.1rem]"
+              dangerouslySetInnerHTML={{ __html: t('FIRST_BLOCK.SUB_TITLE') }}
+            />
           </div>
           <Image
             src={image1}
@@ -65,21 +68,20 @@ export const ForParticipationBlocks = () => {
         className="top-20 flex h-[31.5625rem] w-full max-w-[19.6875rem] items-center justify-center max-lg:sticky "
       >
         <div className="ml-[-2rem] flex h-full w-full rotate-[6deg] flex-col rounded-[1.75rem] bg-[#F1B72B] py-5 text-center drop-shadow-card-sm max-lg:ml-0">
-          <Image
-            src={dividerSmall}
-            alt="small divider"
-            className="w-full px-[1.125rem]"
-          />
-          <div className="mt-12 mb-11 px-[44px]">
-            <p className="text-xl font-normal leading-[1.1rem]">
-              {t('SECOND_BLOCK.UNDER_TITLE')}
-            </p>
-            <h3 className="text-[1.875rem] font-bold leading-[1.875rem]">
-              {t('SECOND_BLOCK.TITLE')}
-            </h3>
-            <p className="text-xl font-normal leading-[1.1rem]">
-              {t('SECOND_BLOCK.SUB_TITLE')}
-            </p>
+          <Image src={dividerSmall} alt="small divider" className="w-full px-[18px]" />
+          <div className="mt-12 mb-11 px-[1.125rem]">
+            <p
+              className="text-xl font-normal leading-[1.1rem]"
+              dangerouslySetInnerHTML={{ __html: t('SECOND_BLOCK.UNDER_TITLE') }}
+            />
+            <h3
+              className="text-[1.875rem] font-bold leading-[1.875rem]"
+              dangerouslySetInnerHTML={{ __html: t('SECOND_BLOCK.TITLE') }}
+            />
+            <p
+              className="text-xl font-normal leading-[1.1rem]"
+              dangerouslySetInnerHTML={{ __html: t('SECOND_BLOCK.SUB_TITLE') }}
+            />
           </div>
           <Image
             src={image2}
@@ -105,13 +107,15 @@ export const ForParticipationBlocks = () => {
             alt="small divider"
             className="w-full px-[1.125rem]"
           />
-          <div className="mt-12 mb-2 px-[72px]">
-            <h3 className="text-[1.875rem] font-bold leading-[1.875rem]">
-              {t('THIRD_BLOCK.TITLE')}
-            </h3>
-            <p className="text-xl font-normal leading-[1.1rem]">
-              {t('THIRD_BLOCK.SUB_TITLE')}
-            </p>
+          <div className="mt-12 mb-2 px-[1.125rem]">
+            <h3
+              className="text-[1.875rem] font-bold leading-[1.875rem]"
+              dangerouslySetInnerHTML={{ __html: t('THIRD_BLOCK.TITLE') }}
+            />
+            <p
+              className="text-xl font-normal leading-[1.1rem]"
+              dangerouslySetInnerHTML={{ __html: t('THIRD_BLOCK.SUB_TITLE') }}
+            />
           </div>
           <Image
             src={image3}

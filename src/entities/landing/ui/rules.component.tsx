@@ -47,7 +47,7 @@ export const Rules = () => {
       >
         <div className="ml-[-2rem] flex h-full w-full rotate-[6deg] flex-col rounded-[1.75rem] bg-[#F3410E] py-5 px-[1.125rem] text-center drop-shadow-card-sm max-lg:ml-0">
           <Image src={dividerSmall} alt="small divider" className="w-full" />
-          <p className="mt-12 mb-11 text-[1.875rem] font-bold leading-[1.875rem] text-secondary-text">
+          <p className="mx-auto mt-12 mb-11 max-w-[240px] text-[1.875rem] font-bold leading-[1.875rem] text-secondary-text">
             {t('SECOND_BLOCK')}
           </p>
           <Image src={rules2} alt="rule" className="aspect-[298/231] w-full" />

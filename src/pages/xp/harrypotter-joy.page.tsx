@@ -205,7 +205,7 @@ function HomePage() {
       <Layout.Main className="flex flex-1 flex-col">
         <section id="main">
           <div className="relative mx-auto mt-7 flex w-max items-start px-5 max-2xl:w-full max-xl:hidden">
-            <div className="mt-[30px] w-full max-w-[22.5rem]">
+            <div className="mt-[30px] w-full max-w-[22.6rem]">
               <Image
                 src={harryPotterLogo}
                 alt="harry potter logo"
@@ -331,9 +331,10 @@ function HomePage() {
                 alt="avatar for activation"
                 className="aspect-[212/250] w-full max-w-[13.25rem] object-cover object-center"
               />
-              <p className="w-full max-w-[28.5rem] text-[1.875rem] leading-[2.25rem] text-[##5C341B] max-lg:text-center max-lg:text-[1.25rem] max-lg:leading-[1.5rem]">
-                {t('ACTIVATION.DESCRIPTION')}
-              </p>
+              <p
+                className="w-full max-w-[28.5rem] text-[1.875rem] leading-[2.25rem] text-[##5C341B] max-lg:text-center max-lg:text-[1.25rem] max-lg:leading-[1.5rem]"
+                dangerouslySetInnerHTML={{ __html: t('ACTIVATION.DESCRIPTION') }}
+              />
             </article>
           </div>
         </section>
@@ -372,13 +373,17 @@ function HomePage() {
               alt="kinder"
               className="aspect-[334/296] w-full max-w-[334px]"
             />
-            <article className="w-full max-w-[25.625rem] text-left text-[30px] max-lg:mt-5 max-lg:text-center max-lg:text-xl">
+            <article className="w-full max-w-[28.5rem] text-left text-[30px] text-[#5C341B] max-lg:mt-5 max-lg:max-w-[18.75rem] max-lg:text-center max-lg:text-xl max-lg:leading-[1.5rem]">
               <p>{t('ABOUT.TEXT_BLOCK.FIRST')}</p>
-              <p className="mt-4 max-lg:mt-6">
+              <p className="mt-4 max-lg:hidden">
                 {t('ABOUT.TEXT_BLOCK.SECOND.TOP')}
                 <br />
                 {t('ABOUT.TEXT_BLOCK.SECOND.BOTTOM')}
               </p>
+              <p
+                className="mt-6 hidden max-lg:block"
+                dangerouslySetInnerHTML={{ __html: t('ABOUT.TEXT_BLOCK.MOB_SECOND') }}
+              />
             </article>
           </div>
           <div className="relative mt-[10.75rem] mb-[7.6rem]">
@@ -441,18 +446,28 @@ function HomePage() {
           <div className="mx-auto flex w-full max-w-[36.75rem] items-start max-lg:flex-col max-lg:items-center ">
             <div className="mt-6 max-lg:order-2 max-lg:flex max-lg:gap-2">
               <button className="mb-4 max-lg:mb-0" onClick={handleAppStore}>
-                <Image
-                  src={appStoreDownload}
-                  alt="download via app store"
-                  className="aspect-[157/52] w-full max-w-[9.8125rem]"
-                />
+                <a
+                  href="https://apps.apple.com/kz/app/applaydu-family-games/id1476035637"
+                  target="_blank"
+                >
+                  <Image
+                    src={appStoreDownload}
+                    alt="download via app store"
+                    className="aspect-[157/52] w-full max-w-[9.8125rem]"
+                  />
+                </a>
               </button>
               <button onClick={handlePlayMarket}>
-                <Image
-                  src={playMarketDownload}
-                  alt="download via play market"
-                  className="aspect-[157/52] w-full max-w-[9.8125rem]"
-                />
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.ferrero.applayduGP&hl=ru"
+                  target="_blank"
+                >
+                  <Image
+                    src={playMarketDownload}
+                    alt="download via play market"
+                    className="aspect-[157/52] w-full max-w-[9.8125rem]"
+                  />
+                </a>
               </button>
             </div>
             <Image

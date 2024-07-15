@@ -40,7 +40,7 @@ export const WeeklyDrawTextBlock = (props: { sectionRef: RefObject<HTMLDivElemen
         </span>
         {t('WEEKLY_DRAW.SECOND_BLOCK.TITLE')}
 
-        <span className="block text-[1.875rem] font-normal leading-[1.75rem] max-lg:mx-auto max-lg:max-w-[15rem] max-lg:text-[1.25rem] max-lg:leading-[1.5rem]">
+        <span className="ml-auto block max-w-[300px] text-[1.875rem] font-normal leading-[1.75rem] max-lg:mx-auto max-lg:max-w-[15rem] max-lg:text-[1.25rem] max-lg:leading-[1.5rem]">
           {t('WEEKLY_DRAW.SECOND_BLOCK.SUB_TITLE')}
         </span>
       </h3>
