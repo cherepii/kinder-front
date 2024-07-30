@@ -171,7 +171,7 @@ export const AdminTable = () => {
                   </td>
                   <td>{file.owner.username || 'Не указано'}</td>
                   <td>
-                    <Link href={`/admin/user/${file.owner.id}`}>{file.owner.id}</Link>
+                    <Link href={`/admin/users/${file.owner.id}`}>{file.owner.id}</Link>
                   </td>
                   <td>{file.owner.tg_username || 'Не указано'}</td>
                   <td>{file.owner.instagramName || 'Не указано'}</td>

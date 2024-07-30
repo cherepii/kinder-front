@@ -436,7 +436,14 @@ function HomePage() {
               </a>
             </Button>
             <Button variant="secondary">
-              <a href="/ПРАВИЛА АКЦИИ HARRY POTTER KINDER JOY.pdf" target="_blank">
+              <a
+                href={
+                  process.env.NODE_ENV === 'production'
+                    ? 'https://kinderpromo.kz/kz/ПРАВИЛА АКЦИИ HARRY POTTER KINDER JOY.pdf'
+                    : '/kz/ПРАВИЛА АКЦИИ HARRY POTTER KINDER JOY.pdf'
+                }
+                target="_blank"
+              >
                 {t('ABOUT.BUTTONS.CONDITIONS')}
               </a>
             </Button>
